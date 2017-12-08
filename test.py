@@ -53,6 +53,9 @@ i=0
 i +=1
 print('义工 %s 张' %i)
 
+a = 123
+if type(a) is True:
+	print(1)
 # res = r.json()
 # token = res['result']['accessToken']
 # #token = r.cookies.items()[0][1]

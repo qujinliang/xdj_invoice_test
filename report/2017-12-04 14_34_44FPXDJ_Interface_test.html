@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>发票小当家接口测试结果</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>发票小当家接口测试结果</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-12-04 14:34:44</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:04.658779</p>
+<p class='attribute'><strong>Status:</strong> Pass 39</p>
+
+<p class='description'>测试用例：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>xdj_dianzi_invoice_test.CheckPuTongTest: 电子发票查验接口测试</td>
+    <td>9</td>
+    <td>9</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',9)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_guangdong: 广东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'create_time': '2017-08-17 14:51:54', 'cycs': '2', 'detaillist': [{'dj': 34.1025641, 'dw': None, 'ggxh': '无', 'hwmc': '【京东超市】施豪特斯（SHTS） 电脑桌 多功能电脑桌笔记本电脑桌床上书桌i100 典雅黑', 'je': 34.1, 'se': 5.8, 'sl': 1.0, 'slv': '17'}, {'dj': 195.72649573, 'dw': None, 'ggxh': '无', 'hwmc': '香可 钢木电脑桌台式简易书桌现代简约办公桌120*60*75cm浅胡桃', 'je': 195.73, 'se': 33.27, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '折扣(13.100%)', 'je': -25.64, 'se': -4.36, 'sl': 0.0, 'slv': '17'}, {'dj': 195.72649573, 'dw': None, 'ggxh': '无', 'hwmc': '香可 台式电脑桌 笔记本书桌 简约办公桌120*60*75cm柚木色+黑架', 'je': 195.73, 'se': 33.27, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '折扣(13.100%)', 'je': -25.64, 'se': -4.36, 'sl': 0.0, 'slv': '17'}, {'dj': 255.55555556, 'dw': None, 'ggxh': '无', 'hwmc': '伯力斯（BECAUSES）吧台椅 麻布红色实木脚休闲椅 MD-015', 'je': 255.56, 'se': 43.44, 'sl': 1.0, 'slv': '17'}], 'exp_status': 0.0, 'fpdm': '044001600211', 'fphm': '60245026', 'fplx': '10', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '2200', 'je': 629.8399999999999, 'jshj': 736.8999999999999, 'jxlx': '1', 'jym': '62396417241094674227', 'kprq': '20170203', 'owner': '', 'remark': '', 'sbbh': '661565677341', 'scrap': 1.0, 'se': 107.06, 'status': 0, 'update_time': '2017-12-02 15:54:38', 'user_id': [12143], 'xfdzdh': '广州市黄埔区九龙镇九龙工业园凤凰三横路99号 020-66215500', 'xfmc': '广州晶东贸易有限公司', 'xfsbh': '91440101664041243T', 'xfsh': '91440101664041243T', 'xfyhzh': '工商银行广州北京路支行 3602000919200384952', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_hunan: 湖北普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': '机器编号:499099716361[客户订单编码:87311703208085732 业务号码:731CSE008389873,89907350,89905365]', 'create_time': '2017-04-17 16:13:41', 'detaillist': [{'dj': 90.09, 'dw': None, 'ggxh': None, 'hwmc': '基础电信通信服务费', 'je': 90.09, 'se': 9.91, 'sl': 1.0, 'slv': '11'}, {'dj': 90.09, 'dw': None, 'ggxh': None, 'hwmc': '基础电信通信服务费', 'je': 90.09, 'se': 9.91, 'sl': 1.0, 'slv': '11'}], 'exp_status': 0.0, 'fpdm': '043001600111', 'fphm': '06721529', 'fplx': '10', 'gfdzdh': None, 'gfmc': '六艺星空(北京)文化传播有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '148', 'je': 180.18, 'jshj': 200.0, 'jxlx': '1', 'jym': '15889785430645896824', 'kprq': '20170320', 'owner': '', 'remark': '', 'sbbh': '499099716361', 'scrap': 1.0, 'se': 19.82, 'status': 0, 'update_time': '2017-12-02 15:54:38', 'user_id': [12143], 'xfdzdh': '湖南省长沙市雨花区韶山北路439号 0731-85463202', 'xfmc': '中国电信股份有限公司长沙分公司', 'xfsh': '9143010076325448X0', 'xfyhzh': '中国银行东塘支行 587257352200', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_neimeng: 内蒙电子发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-10-18 14:47:27', 'cycs': '1', 'detaillist': [{'dj': None, 'dw': None, 'ggxh': None, 'hwmc': '餐费', 'je': 0.94, 'se': 0.06, 'sl': None, 'slv': '6'}], 'fpdm': '015001700111', 'fphm': '25300518', 'fplx': '10', 'gfdzdh': '内蒙古自治区呼和浩特市科尔沁南路69号留学人创业园新创业大厦D座4层0471-3281787', 'gfmc': '内蒙古航天信息有限公司', 'gfsh': '911502917971514031', 'gfyhzh': '中国工商银行股份有限公司呼和浩特锡林南路支行0602005219200025250', 'id': '2600', 'je': 0.94, 'jshj': 1.0, 'jxlx': '1', 'jym': '63977218183750544484', 'kprq': '20171017', 'owner': '', 'remark': '', 'sbbh': '661570309462', 'scrap': 1, 'se': 0.06, 'status': 0, 'update_time': '2017-12-02 15:54:38', 'user_id': [12143], 'xfdzdh': '呼和浩特市如意开发区东岸国际A区21号商业楼 15047995221', 'xfmc': '呼和浩特市如意开发区泽成羊饭店', 'xfsbh': '15282419760205451807', 'xfsh': '15282419760205451807', 'xfyhzh': '赛罕区小台分机处金谷农村信用社621737000103345019', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shandong: 山东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'create_time': '2017-06-26 02:35:23', 'detaillist': [{'dj': 28.3, 'dw': None, 'ggxh': None, 'hwmc': '餐饮服务', 'je': 28.3, 'se': 1.7, 'sl': 1.0, 'slv': '6'}], 'exp_status': 0.0, 'fpdm': '037001600111', 'fphm': '06411263', 'fplx': '10', 'gfdzdh': None, 'gfmc': '中泰金控国际控股有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '1542', 'je': 28.3, 'jshj': 30.0, 'jxlx': '1', 'jym': '70823962630437701888', 'kprq': '20170402', 'owner': '', 'remark': '', 'sbbh': '661565769552', 'scrap': 1.0, 'se': 1.7, 'status': 0, 'update_time': '2017-12-02 15:54:38', 'user_id': [12143], 'xfdzdh': '山东省济南市历下区文化西路77号金光健康城1号楼 0531-84895635', 'xfmc': '山东麦当劳（餐厅食品）有限公司', 'xfsh': '913700002671236326', 'xfyhzh': '中信银行济南分行 7372010182200048143', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shanghai: 上海电子发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'com_id': 2149, 'create_time': '2017-09-12 15:16:16', 'cycs': '11', 'detaillist': [{'dj': 17.01, 'dw': None, 'ggxh': '6953240731606', 'hwmc': '【天猫超市】良品铺子盐焗腰果仁180g坚果零食干果腰果仁特产炒货', 'je': 17.01, 'se': 2.89, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '【天猫超市】良品铺子盐焗腰果仁180g坚果零食干果腰果仁特产炒货', 'je': -1.72, 'se': -0.29, 'sl': 0.0, 'slv': '17'}, {'dj': 1.0175, 'dw': None, 'ggxh': '6923462670304', 'hwmc': '【天猫超市】555卫生巾 贴身无荧光剂纯棉柔日用230mm5片特价', 'je': 4.07, 'se': 0.69, 'sl': 4.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '【天猫超市】555卫生巾 贴身无荧光剂纯棉柔日用230mm5片特价', 'je': -0.41, 'se': -0.07, 'sl': 0.0, 'slv': '17'}, {'dj': 11.88, 'dw': None, 'ggxh': '1414141100205', 'hwmc': '【天猫超市】 阿联酋原装进口酋长椰枣（弗哈德）250g休闲零食', 'je': 11.88, 'se': 2.02, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '【天猫超市】 阿联酋原装进口酋长椰枣（弗哈德）250g休闲零食', 'je': -1.2, 'se': -0.2, 'sl': 0.0, 'slv': '17'}, {'dj': 15.73, 'dw': None, 'ggxh': '6909995122015', 'hwmc': '【天猫超市】旺旺 仙贝 540g 加量装 520g+20g 休闲膨化零食礼物', 'je': 15.73, 'se': 2.67, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '【天猫超市】旺旺 仙贝 540g 加量装 520g+20g 休闲膨化零食礼物', 'je': -1.59, 'se': -0.27, 'sl': 0.0, 'slv': '17'}, {'dj': 5.47, 'dw': None, 'ggxh': '6951181103049', 'hwmc': '【天猫超市】舒可曼纯正白砂糖400g碳化工艺细白糖干爽带盖易保存', 'je': 10.94, 'se': 1.86, 'sl': 2.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '【天猫超市】舒可曼纯正白砂糖400g碳化工艺细白糖干爽带盖易保存', 'je': -1.1, 'se': -0.19, 'sl': 0.0, 'slv': '17'}, {'dj': 0.01, 'dw': None, 'ggxh': '6922266449642', 'hwmc': '【天猫超市】清风手帕纸新韧纯品4层8张*12包纸手帕纸巾小包', 'je': 0.01, 'se': 0.0, 'sl': 1.0, 'slv': '17'}, {'dj': 67.52, 'dw': None, 'ggxh': '4025839037603', 'hwmc': '【天猫超市】德国原装进口莱爱家全脂纯牛奶1Lx12大包装原装进口', 'je': 67.52, 'se': 11.48, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '【天猫超市】德国原装进口莱爱家全脂纯牛奶1Lx12大包装原装进口', 'je': -6.8, 'se': -1.16, 'sl': 0.0, 'slv': '17'}], 'exp_status': 1, 'file_time': '2017-11-13 15:04:18', 'fpdm': '031001600411', 'fphm': '70558475', 'fplx': '10', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '2320', 'je': 114.34, 'jshj': 133.77, 'jxlx': '1', 'jym': '78004132900375027893', 'kprq': '20170624', 'owner': 'ysyctest002', 'remark': '打开链接看多了； ', 'sbbh': '661619906841', 'scrap': 1, 'se': 19.43, 'status': 1, 'update_time': '2017-11-27 10:17:56', 'user_id': [12143], 'xfdzdh': '上海市静安区延安中路841号东方海外大厦2601室 021-62898156', 'xfmc': '上海天翌电子商务有限公司', 'xfsbh': '91310106552993944D', 'xfsh': '91310106552993944D', 'xfyhzh': '中国银行股份有限公司上海市华山路支行 440359235894', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shanxi: 山西电子发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'com_id': 47, 'create_time': '2017-07-01 15:29:48', 'detaillist': [{'dj': 34.91, 'dw': None, 'ggxh': None, 'hwmc': '餐饮服务', 'je': 34.91, 'se': 2.09, 'sl': 1.0, 'slv': '6'}], 'exp_status': 1.0, 'file_time': '2017-05-25 15:30:45', 'fpdm': '014001600111', 'fphm': '12863704', 'fplx': '10', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': '123456789012345', 'gfyhzh': None, 'id': '348', 'je': 34.91, 'jshj': 37.0, 'jxlx': '1', 'jym': '47408876052901489819', 'kprq': '20170701', 'owner': '杨广涛', 'remark': '', 'sbbh': '661616293313', 'scrap': 1.0, 'se': 2.09, 'status': 0, 'update_time': '2017-11-30 20:53:47', 'user_id': [12143], 'xfdzdh': '山西省太原市并州北路48号中正乐居天街1#楼一，二层 0351-4083831', 'xfmc': '北京必胜客比萨饼有限公司山西分公司', 'xfsh': '91140100754074655C', 'xfyhzh': '工行太原大营盘支行 0502121819200086317', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shaxi: 陕西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': '费用月份：2017-06', 'create_time': '2017-06-08 09:54:19', 'detaillist': [{'dj': 300.0, 'dw': None, 'ggxh': None, 'hwmc': '11888充值卡', 'je': 300.0, 'se': 0.0, 'sl': 1.0, 'slv': '0'}], 'exp_status': 0.0, 'fpdm': '061001605111', 'fphm': '23070371', 'fplx': '10', 'gfdzdh': '北京市海淀区中关村18066616980', 'gfmc': '北京中科科仪股份有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '439', 'je': 300.0, 'jshj': 300.0, 'jxlx': '1', 'jym': '16460431832531703425', 'kprq': '20170605', 'owner': '', 'remark': '', 'sbbh': '499099436360', 'scrap': 1.0, 'se': 0.0, 'status': 0, 'update_time': '2017-12-02 15:54:38', 'user_id': [12143], 'xfdzdh': '西安市西新街28号 10000', 'xfmc': '中国电信股份有限公司西安分公司', 'xfsh': '91610102757814989P', 'xfyhzh': '工行北大街支行 3700020509005401091', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_tianjin: 天津电子发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'create_time': '2017-07-20 15:54:35', 'cycs': '2', 'detaillist': [{'dj': 64.35897436, 'dw': None, 'ggxh': None, 'hwmc': '耗材', 'je': 64.36, 'se': 10.94, 'sl': 1.0, 'slv': '17'}, {'dj': 0.0, 'dw': None, 'ggxh': None, 'hwmc': '耗材', 'je': -12.05, 'se': -2.05, 'sl': 0.0, 'slv': '17'}], 'exp_status': 0.0, 'fpdm': '012001600111', 'fphm': '84196936', 'fplx': '10', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '2041', 'je': 52.31, 'jshj': 61.2, 'jxlx': '1', 'jym': '58445299984165904686', 'kprq': '20170719', 'owner': '', 'remark': '', 'sbbh': '661565782327', 'scrap': 1.0, 'se': 8.89, 'status': 0, 'update_time': '2017-12-02 15:54:38', 'user_id': [12143], 'xfdzdh': '天津市武清区京津电子商务产业园宏达道北侧2号 57807000', 'xfmc': '天津瑞佳讯贸易有限公司', 'xfsh': '120222079642398', 'xfyhzh': '中国建设银行股份有限公司天津武清支行 12001720800052531259', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_zhejiang: 浙江电子发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'com_id': 48, 'create_time': '2017-04-27 11:04:05', 'detaillist': [{'dj': 252.61, 'dw': None, 'ggxh': None, 'hwmc': '软件服务费', 'je': 252.61, 'se': 15.16, 'sl': 1.0, 'slv': '6'}], 'exp_status': 0.0, 'file_time': '2017-04-27 11:05:50', 'fpdm': '033001600211', 'fphm': '50894061', 'fplx': '10', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': None, 'gfyhzh': None, 'id': '227', 'je': 252.61, 'jshj': 267.77000000000004, 'jxlx': '1', 'jym': '44511777583730895954', 'kprq': '20170424', 'owner': 'hakuna', 'remark': '', 'sbbh': '661551589471', 'scrap': 1.0, 'se': 15.16, 'status': 1, 'user_id': [112.0], 'xfdzdh': '杭州市转塘科技经济区块16号8幢 0571-85022088', 'xfmc': '阿里云计算有限公司', 'xfsh': '91330106673959654P', 'xfyhzh': '招商银行杭州高新支行 571905493610702', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>xdj_invoice_interface_test.CheckInvoiceTest: 小当家发票查验接口测试</td>
+    <td>15</td>
+    <td>15</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',15)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_chech_invoice_ptfp_succe: 普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': '订单号20571012215', 'create_time': '2017-12-04 14:18:46', 'cycs': '52', 'detaillist': [{'dj': 96.32478632, 'dw': None, 'ggxh': None, 'hwmc': '清洁用品', 'je': 96.32, 'se': 16.38, 'sl': 1.0, 'slv': '17'}], 'fpdm': '1100164320', 'fphm': '30570755', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': None, 'gfsh': None, 'gfyhzh': None, 'id': '4536', 'je': 96.32, 'jqbh': '661616324511', 'jshj': 112.7, 'jxlx': '1', 'jym': '64811114923492644263', 'kprq': '20170209', 'remark': '', 'scrap': 1, 'se': 16.38, 'status': 0, 'user_id': [12143], 'xfdzdh': '北京市朝阳区北苑家园秋实街1号 84957390', 'xfmc': '北京物美大卖场商业管理有限公司', 'xfsbh': '110224765522740', 'xfyhzh': '工商行玉东分理处 0200207809200044031', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_cycg_error: 查验成功发票信息不一致</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: {'code': 9, 'msg': '所查发票不存在'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_dzfp_succe: 电子普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.3: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:47', 'cycs': '52', 'detaillist': [{'dj': 50.37, 'dw': None, 'ggxh': None, 'hwmc': '客运服务费', 'je': 50.37, 'se': 1.51, 'sl': 1.0, 'slv': '3'}], 'fpdm': '012001700111', 'fphm': '02650163', 'fplx': '10', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': '91110108069587786B', 'gfyhzh': None, 'id': '4537', 'je': 50.37, 'jshj': 51.88, 'jxlx': '1', 'jym': '10582570170797746508', 'kprq': '20170724', 'remark': '', 'sbbh': '499099606269', 'scrap': 1, 'se': 1.51, 'status': 0, 'user_id': [12143], 'xfdzdh': '天津经济技术开发区南港工业区综合服务区办公楼C座103室12单元022-59002850', 'xfmc': '滴滴出行科技有限公司', 'xfsbh': '911201163409833307', 'xfsh': '911201163409833307', 'xfyhzh': '招商银行股份有限公司天津自由贸易试验区分行122905939910401', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fpdm_lengt: 发票代码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.4: {'code': 10006, 'msg': '发票代码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fpgs_error: 错误格式的发票</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        pass</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.5: {'code': 1006, 'msg': '查验异常'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fphm_lengt: 发票号码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
+        pass</a>
+
+    <div id='div_pt2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.6: {'code': 10009, 'msg': '发票号码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fplx_error: 发票类型不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.7')" >
+        pass</a>
+
+    <div id='div_pt2.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.7: {'code': 10003, 'msg': '发票类型：不存在的类型'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fptt_error: 发票抬头不在查询范围内</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.8')" >
+        pass</a>
+
+    <div id='div_pt2.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.8: {'code': 10023, 'msg': '发票抬头不在查询范围内'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fpxx_error: 无对应发票信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.9')" >
+        pass</a>
+
+    <div id='div_pt2.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.9: {'code': 11018, 'msg': '无对应发票信息'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jdcp_succe: 机动车销售统一发票查成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.10')" >
+        pass</a>
+
+    <div id='div_pt2.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.10: {'code': 0, 'msg': '查询成功', 'result': {'bhsj': '60940.17', 'business': 0, 'cd': '长春市', 'cjhm': 'LFP83ACE5G1D83982', 'cllx': '轿车', 'cpxh': '一汽牌CA7165MTE5G2', 'create_time': '2017-12-04 14:18:50', 'cycs': '62', 'dh': '029-83293996', 'dw': '1.82', 'dz': '西安市幸福中路41号', 'fdjhm': '097693', 'fpdm': '161001722600', 'fphm': '00136078', 'fplx': '03', 'gfmc': '孔晓琳', 'gfsbh': None, 'gfsh': None, 'ghdw': '孔晓琳', 'hgzs': 'WAA03R09G083666', 'id': '4538', 'je': 60940.17, 'jkzmsh': '无', 'jshj': 71300.0, 'jxlx': '1', 'khyh': '工行开发区支行东区分理处', 'kprq': '20170729', 'nsrsbh': '610102220671519', 'remark': '', 'scrap': 1, 'se': 10359.83, 'sfzhm': '610114199311033546', 'sjdh': '无', 'skph': '539906410005', 'slv': '17', 'status': 0, 'swjgdm': '16101025200', 'swjgmc': '新城区国家税务局韩森寨税务所', 'user_id': [12143], 'wspzh': None, 'xcrs': '5', 'xhdwmc': '西安唐都进口汽车修理服务有限公司', 'zfbz': 'N', 'zh': '3700022819200008391'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jsfp_succe: 卷票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.11')" >
+        pass</a>
+
+    <div id='div_pt2.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.11: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:51', 'cycs': '56', 'detaillist': [{'dj': 608.0, 'dw': None, 'ggxh': None, 'hwmc': '餐费', 'je': 608.0, 'se': None, 'sl': 1.0, 'slv': None}], 'fpdm': '014001700107', 'fphm': '02560597', 'fplx': '11', 'gfmc': '优识云创(北京)科技有限公司', 'gfsh': '000000000000000', 'id': '4539', 'je': 590.29, 'jqbh': '661623497568', 'jshj': 608.0, 'jxlx': '1', 'jym': '68341155091448863926', 'kprq': '20170522', 'remark': '', 'scrap': 1, 'se': 17.71, 'shy': '管理员', 'status': 0, 'user_id': [12143], 'xfmc': '太原锦上云餐饮管理有限公司', 'xfsbh': '91140106MA0GRGPP65', 'xfsh': '91140106MA0GRGPP65', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jym_lengt: 发票校验码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.12')" >
+        pass</a>
+
+    <div id='div_pt2.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.12: {'code': 10018, 'msg': '检验码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_kprq_lengt: 发票日期长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.13')" >
+        pass</a>
+
+    <div id='div_pt2.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.13: {'code': 10012, 'msg': '开票日期：不合法的格式'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_miss: 无对应发票信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.14')" >
+        pass</a>
+
+    <div id='div_pt2.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.14: {'code': 11018, 'msg': '无对应发票信息'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_zyfp_succe: 专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.15')" >
+        pass</a>
+
+    <div id='div_pt2.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.15: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:52', 'cycs': '53', 'detaillist': [{'dj': 6320.754716981132, 'dw': None, 'ggxh': None, 'hwmc': 'IDC服务费', 'je': 6320.75, 'se': 379.25, 'sl': 1.0, 'slv': '6'}], 'fpdm': '1100171130', 'fphm': '02577178', 'fplx': '01', 'gfdzdh': '北京市海淀区西八里庄69号8层805室 010-82102838', 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '91110108069587786B', 'gfsh': '91110108069587786B', 'gfyhzh': '上海浦东发展银行北京万寿路支行 91100154800004144', 'id': '4540', 'je': 6320.75, 'jqbh': '661537754151', 'jshj': 6700.0, 'jxlx': '1', 'jym': '50075457513876199383', 'kprq': '20170816', 'remark': '', 'scrap': 1, 'se': 379.25, 'status': 0, 'user_id': [12143], 'xfdzdh': '北京市朝阳区东四环中路41号3层314室 010-69736780', 'xfmc': '北京神狐时代通信技术有限公司', 'xfsbh': '91110105697736930Q', 'xfyhzh': '广东发展银行股份有限公司北京分行营业部137001516010025111', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>xdj_pt_invoice_test.CheckPuTongTest: 普通发票查验接口测试</td>
+    <td>15</td>
+    <td>15</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',15)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_anhui: 安徽普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:52', 'cycs': '5', 'detaillist': [{'dj': 110.25641025641026, 'dw': '包', 'ggxh': None, 'hwmc': '花王妙而舒瞬爽透气婴儿纸尿裤彩箱装(L) 96', 'je': 110.26, 'se': 18.74, 'sl': 1.0, 'slv': '17'}], 'fpdm': '3400172320', 'fphm': '19768327', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '91110108069587786B', 'gfsh': '91110108069587786B', 'gfyhzh': None, 'id': '4541', 'je': 110.26, 'jqbh': '661532091378', 'jshj': 129.0, 'jxlx': '1', 'jym': '74174462991335156228', 'kprq': '20171020', 'remark': '', 'scrap': 1, 'se': 18.74, 'status': 0, 'user_id': [12143], 'xfdzdh': '安徽省合肥市胜利路光大国际广场D区902,904 0551-64224288', 'xfmc': '合肥绿叶服饰销售有限公司', 'xfsbh': '91340100734940683M', 'xfyhzh': '交行长丰路支行  341317000018000054996', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_beijing: 北京普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:53', 'cycs': '5', 'detaillist': [{'dj': None, 'dw': None, 'ggxh': None, 'hwmc': '餐费', 'je': 592.23, 'se': 17.77, 'sl': None, 'slv': '3'}], 'fpdm': '1100171320', 'fphm': '45538707', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '91110108069587786B', 'gfsh': '91110108069587786B', 'gfyhzh': None, 'id': '4542', 'je': 592.23, 'jqbh': '499921117989', 'jshj': 610.0, 'jxlx': '1', 'jym': '15559620860081390267', 'kprq': '20170915', 'remark': '', 'scrap': 1, 'se': 17.77, 'status': 0, 'user_id': [12143], 'xfdzdh': '北京市西城区槐柏树街北里2号楼63158881', 'xfmc': '北京和颐合餐饮有限责任公司', 'xfsbh': '9111010210160644XH', 'xfyhzh': '中国工商银行股份有限公司北京天宁寺支行0200024809201008959', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fujian: 安徽普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        pass</a>
+
+    <div id='div_pt3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.3: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:53', 'cycs': '3', 'detaillist': [{'dj': 69.02654867256638, 'dw': '件', 'ggxh': None, 'hwmc': '伊利金典纯牛奶250ml*12', 'je': 69.03, 'se': 8.97, 'sl': 1.0, 'slv': '13'}, {'dj': 11.965811965811966, 'dw': '袋', 'ggxh': None, 'hwmc': '散装小意思面包', 'je': 35.9, 'se': 6.1, 'sl': 3.0, 'slv': '17'}], 'fpdm': '3500163350', 'fphm': '21099644', 'fplx': '04', 'gfdzdh': '福建省龙岩市新罗区曹溪镇董邦村合溪口0597-2778210', 'gfmc': '华润水泥(龙岩曹溪)有限公司', 'gfsbh': '913508005575738852', 'gfsh': '913508005575738852', 'gfyhzh': '中国农业银行龙岩新罗区曹溪支行13711401040003816', 'id': '4543', 'je': 104.93, 'jqbh': '661512948039', 'jshj': 120.0, 'jxlx': '1', 'jym': '54050168641794920870', 'kprq': '20170621', 'remark': '', 'scrap': 1, 'se': 15.07, 'status': 0, 'user_id': [12143], 'xfdzdh': '龙岩市新罗区南城莲东北路24号莲东市场一层至三层 0597-2829085', 'xfmc': '龙岩夏商百货有限公司', 'xfsbh': '9135080058533008XY', 'xfyhzh': '建行龙岩新罗支行  35001696107052513700', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_guangdong: 广东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
+        pass</a>
+
+    <div id='div_pt3.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.4: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': '2016.05-2017.04', 'create_time': '2017-12-04 14:18:54', 'cycs': '3', 'detaillist': [{'dj': 25.94339623, 'dw': '月', 'ggxh': '老用户', 'hwmc': '增值税税控系统技术维护费（2016年）', 'je': 207.55, 'se': 12.45, 'sl': 8.0, 'slv': '6'}, {'dj': 25.94339623, 'dw': '月', 'ggxh': '老用户', 'hwmc': '增值税税控系统技术维护费（2017年）', 'je': 103.77, 'se': 6.23, 'sl': 4.0, 'slv': '6'}], 'fpdm': '4400163320', 'fphm': '36198951', 'fplx': '04', 'gfdzdh': '广州市荔湾区信义路24号3幢自编103一、二楼（仅限办公用途）81230618', 'gfmc': '广州搜床物业管理有限公司', 'gfsbh': '91440103353529532H', 'gfsh': '91440103353529532H', 'gfyhzh': '中国光大银行股份有限公司广州分行38610188000505924', 'id': '4544', 'je': 311.32, 'jqbh': '661563904837', 'jshj': 330.0, 'jxlx': '1', 'jym': '68660794203256596043', 'kprq': '20170421', 'remark': '', 'scrap': 1, 'se': 18.68, 'status': 0, 'user_id': [12143], 'xfdzdh': '广州市海珠区工业大道北路67号20号楼3楼全层020-89312788', 'xfmc': '广州航天信息有限公司', 'xfsbh': '914401010827153087', 'xfyhzh': '中国工商银行股份有限公司广州东山广场支行3602043319200043231', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_guangxi: 广西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
+        pass</a>
+
+    <div id='div_pt3.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.5: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:57', 'cycs': '3', 'detaillist': [{'dj': 48.54368932038835, 'dw': None, 'ggxh': None, 'hwmc': '运费', 'je': 50749.51, 'se': 1522.49, 'sl': 1045.44, 'slv': '3'}], 'fpdm': '4500171320', 'fphm': '15663941', 'fplx': '04', 'gfdzdh': '广西省南宁市武鸣县城定罗路8号0771-6213618', 'gfmc': '广西武鸣利源科技养殖有限责任公司', 'gfsbh': '91450122735165850G', 'gfsh': '91450122735165850G', 'gfyhzh': '中国农业银行南宁武鸣支行20-034101040002186', 'id': '4545', 'je': 50749.51, 'jqbh': '661612061267', 'jshj': 52272.0, 'jxlx': '1', 'jym': '83124633333854249570', 'kprq': '20170612', 'remark': '', 'scrap': 1, 'se': 1522.49, 'status': 0, 'user_id': [12143], 'xfdzdh': '玉林市城站路中段二运小区2号楼 18977990689', 'xfmc': '廖容', 'xfsbh': '45250319800905476802', 'xfyhzh': '玉林市区农村信用合作社长旺分社6231330500020880014', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_hainan: 海南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.6')" >
+        pass</a>
+
+    <div id='div_pt3.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.6: {'code': 0, 'msg': '查询成功', 'result': {'business': 0.0, 'bz': None, 'com_id': 94, 'create_time': '2017-07-03 19:07:34', 'cycs': '2', 'detaillist': [{'dj': 24271.844660194176, 'dw': '项', 'ggxh': None, 'hwmc': '排队机系统开发改造费', 'je': 8495.15, 'se': 254.85, 'sl': 0.35, 'slv': '3'}], 'exp_status': 0.0, 'file_time': '2017-07-03 19:12:04', 'fpdm': '4600162320', 'fphm': '09581833', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': None, 'gfyhzh': None, 'id': '2006', 'je': 8495.15, 'jqbh': '661548896648', 'jshj': 8750.0, 'jxlx': '1', 'jym': '63308164462745264788', 'kprq': '20170524', 'owner': '杨广涛', 'remark': '', 'scrap': 1.0, 'se': 254.85, 'status': 1, 'user_id': [247.0], 'xfdzdh': '海南省海口市海秀路DC商业城4124号 0898-66525615', 'xfmc': '海口联合华锋网络科技有限公司', 'xfsbh': '9146010057874214X8', 'xfyhzh': '工行望海楼支行：2201020109200139380', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_hebei: 河北普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.7')" >
+        pass</a>
+
+    <div id='div_pt3.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.7: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:18:58', 'cycs': '5', 'detaillist': [{'dj': 7461.46541025641, 'dw': '吨', 'ggxh': '92#', 'hwmc': '汽油', 'je': 89.74, 'se': 15.26, 'sl': 0.012027609163775, 'slv': '17'}], 'fpdm': '1300171320', 'fphm': '00271772', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '110105700000773', 'gfsh': '110105700000773', 'gfyhzh': None, 'id': '4546', 'je': 89.74, 'jqbh': '661512226790', 'jshj': 105.0, 'jxlx': '1', 'jym': '52459780472069936815', 'kprq': '20170927', 'remark': '', 'scrap': 1, 'se': 15.26, 'status': 0, 'user_id': [12143], 'xfdzdh': '城西北街222号 3635462', 'xfmc': '涿州市永联双塔加油站', 'xfsbh': '130681108221956', 'xfyhzh': '建行涿州物探支行 13001666208050001028', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_henan: 河南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.8')" >
+        pass</a>
+
+    <div id='div_pt3.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.8: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:19:01', 'cycs': '2', 'detaillist': [{'dj': 9894.660194174758, 'dw': '套', 'ggxh': None, 'hwmc': 'LA3投光灯', 'je': 98946.6, 'se': 2968.4, 'sl': 10.0, 'slv': '3'}], 'fpdm': '4100171320', 'fphm': '00312101', 'fplx': '04', 'gfdzdh': '郑州市经开区经开第十九大街东径南七路北0371-69127000', 'gfmc': '竹林松大科技股份有限公司', 'gfsbh': '914101007440625468', 'gfsh': '914101007440625468', 'gfyhzh': '河南巩义农村商业银行股份有限公司小关支行00000000222780036012', 'id': '4547', 'je': 98946.6, 'jqbh': '499929531965', 'jshj': 101915.0, 'jxlx': '1', 'jym': '04091506209678956239', 'kprq': '20170606', 'remark': '', 'scrap': 1, 'se': 2968.4, 'status': 0, 'user_id': [12143], 'xfdzdh': '郑州市金水区花园路159号1号楼20层2002号18037575371', 'xfmc': '郑州市金水区日月建筑材料商行', 'xfsbh': '92410105MA40MQCP67', 'xfyhzh': '郑州市市郊农村信用合作联社柳林信用社00713021900000125', 'zfbz': 'Y'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_hunan: 湖北普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.9')" >
+        pass</a>
+
+    <div id='div_pt3.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.9: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:19:02', 'cycs': '3', 'detaillist': [{'dj': 0.598290598290598, 'dw': '台', 'ggxh': None, 'hwmc': '电梯款', 'je': 77777.78, 'se': 13222.22, 'sl': 130000.0, 'slv': '17'}], 'fpdm': '4300171320', 'fphm': '04268504', 'fplx': '04', 'gfdzdh': None, 'gfmc': '浏阳市宏伊新城开发有限公司', 'gfsbh': '914301810771836261', 'gfsh': '914301810771836261', 'gfyhzh': None, 'id': '4548', 'je': 77777.78, 'jqbh': '661601120575', 'jshj': 91000.0, 'jxlx': '1', 'jym': '73580554162973288558', 'kprq': '20170616', 'remark': '', 'scrap': 1, 'se': 13222.22, 'status': 0, 'user_id': [12143], 'xfdzdh': '长沙市雨花区长沙大道598号檀香花园35栋1401房 0731-88669143', 'xfmc': '湖南升华电梯销售有限公司', 'xfsbh': '914301117406307960', 'xfyhzh': '长沙银行水风井支行  800078277402018', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_liaoning: 辽宁普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.10')" >
+        pass</a>
+
+    <div id='div_pt3.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.10: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-11-18 18:20:02', 'cycs': '1', 'detaillist': [{'dj': 95.14563106796116, 'dw': '盒', 'ggxh': None, 'hwmc': '西洋参片', 'je': 95.15, 'se': 2.85, 'sl': 1.0, 'slv': '3'}], 'fpdm': '2100171320', 'fphm': '11695353', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '91110108069587786B', 'gfsh': '91110108069587786B', 'gfyhzh': None, 'id': '3528', 'je': 95.15, 'jqbh': '661546796424', 'jshj': 98.0, 'jxlx': '1', 'jym': '65308236751178893273', 'kprq': '20170925', 'remark': '', 'scrap': 1, 'se': 2.85, 'status': 0, 'update_time': '2017-12-01 17:30:43', 'user_id': [12143], 'xfdzdh': '丹东市振兴区三街八委金顺嘉园2号106室 0415-2125081', 'xfmc': '丹东市振兴区金天华食品商店', 'xfsbh': '210624197004283234', 'xfyhzh': None, 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_ningxia: 宁夏普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.11')" >
+        pass</a>
+
+    <div id='div_pt3.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.11: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-01 18:58:12', 'cycs': '3', 'detaillist': [{'dj': None, 'dw': '天', 'ggxh': None, 'hwmc': '住宿', 'je': 613.0, 'se': 18.39, 'sl': None, 'slv': '3'}], 'fpdm': '6400171320', 'fphm': '02645843', 'fplx': '04', 'gfdzdh': '上海市青浦区工业园区郏一工业区7号3幢1层X区199室 021-67002300', 'gfmc': '上海甄汇信息科技有限公司', 'gfsbh': '91310118MA1JLFER1F', 'gfsh': '91310118MA1JLFER1F', 'gfyhzh': '招商银行上海张江支行 121922196010802', 'id': '4512', 'je': 613.0, 'jqbh': '499919811832', 'jshj': 631.39, 'jxlx': '1', 'jym': '01232524983705932430', 'kprq': '20170916', 'remark': '', 'scrap': 1, 'se': 18.39, 'status': 0, 'user_id': [12143], 'xfdzdh': '银川市西夏区万达广场C区7号楼817室0951-8681259', 'xfmc': '银川市西夏区佳康桥商务酒店', 'xfsbh': '64032119840306055501', 'xfyhzh': '中国农业银行西夏万达分理处6228481208222676379', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shandong: 山东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.12')" >
+        pass</a>
+
+    <div id='div_pt3.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.12: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:19:03', 'cycs': '3', 'detaillist': [{'dj': 7671.844660194175, 'dw': None, 'ggxh': None, 'hwmc': '咨询费', 'je': 7671.84, 'se': 230.16, 'sl': 1.0, 'slv': '3'}], 'fpdm': '3700164320', 'fphm': '33170062', 'fplx': '04', 'gfdzdh': '重庆市渝北区新南路166号龙湖国际2栋一单元10楼1005室023-63017065', 'gfmc': '大溪地诺丽饮料(中国)有限公司', 'gfsbh': '91500000618478364T', 'gfsh': '91500000618478364T', 'gfyhzh': '招商银行重庆分行北部新区支行123905168710105', 'id': '4549', 'je': 7671.84, 'jqbh': '661625893767', 'jshj': 7902.0, 'jxlx': '1', 'jym': '43025793593414690447', 'kprq': '20170606', 'remark': '', 'scrap': 1, 'se': 230.16, 'status': 0, 'user_id': [12143], 'xfdzdh': '山东省威海市环翠区昆明路22号建材宾馆2013 0631-5321022', 'xfmc': '环翠区大信经济信息咨询服务部', 'xfsbh': '37108219790101071801', 'xfyhzh': '工商银行环翠区渔港路支行 6222081614000088421', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shanghai: 上海普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.13')" >
+        pass</a>
+
+    <div id='div_pt3.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.13: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-04 14:19:14', 'cycs': '28', 'detaillist': [{'dj': 8.062678062678062, 'dw': '件', 'ggxh': None, 'hwmc': '免钉胶', 'je': 24.19, 'se': 4.11, 'sl': 3.0, 'slv': '17'}], 'fpdm': '3100162320', 'fphm': '56618159', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': None, 'gfsh': None, 'gfyhzh': None, 'id': '4550', 'je': 24.19, 'jqbh': '661502779761', 'jshj': 28.3, 'jxlx': '1', 'jym': '69328500782413690593', 'kprq': '20170213', 'remark': '', 'scrap': 1, 'se': 4.11, 'status': 0, 'user_id': [12143], 'xfdzdh': '七宝镇九星市场星友路3幢21-24  64192565', 'xfmc': '上海闵启贸易有限公司', 'xfsbh': '91310114755727857F', 'xfyhzh': '上海浦发银行龙茗路支行98030154740001738', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shaxi: 陕西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.14')" >
+        pass</a>
+
+    <div id='div_pt3.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.14: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-01 18:58:13', 'cycs': '4', 'detaillist': [{'dj': 80.58252427184466, 'dw': None, 'ggxh': None, 'hwmc': '餐饮费', 'je': 80.58, 'se': 2.42, 'sl': 1.0, 'slv': '3'}], 'fpdm': '6100171320', 'fphm': '09030275', 'fplx': '04', 'gfdzdh': '上海市青浦区工业园区郟一工业区7号3幢1层X区199室 021-67002300', 'gfmc': '上海甄汇信息科技有限公司', 'gfsbh': '91310118MA1JLFER1F', 'gfsh': '91310118MA1JLFER1F', 'gfyhzh': '招商银行上海张江支行  121922196010802', 'id': '4513', 'je': 80.58, 'jqbh': '539906938281', 'jshj': 83.0, 'jxlx': '1', 'jym': '18155987120948911427', 'kprq': '20170626', 'remark': '', 'scrap': 1, 'se': 2.42, 'status': 0, 'user_id': [12143], 'xfdzdh': '西安市雁塔区唐园假日新城1号楼1010217792704005', 'xfmc': '西安市雁塔区老屋头串串香店', 'xfsbh': '92610113MA6U3K2W0K', 'xfyhzh': '6216603600002594129中行西安东仪路支行', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_tianjin: 天津普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.15')" >
+        pass</a>
+
+    <div id='div_pt3.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.15: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': '潘磊收', 'create_time': '2017-12-04 14:19:14', 'cycs': '4', 'detaillist': [{'dj': 206.378641, 'dw': '次', 'ggxh': '无', 'hwmc': '客运服务费', 'je': 206.38, 'se': 6.19, 'sl': 1.0, 'slv': '3'}], 'fpdm': '1200172320', 'fphm': '09267390', 'fplx': '04', 'gfdzdh': '上海市普陀区长寿路189号7楼18501610545', 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '91110108069587786B', 'gfsh': '91110108069587786B', 'gfyhzh': None, 'id': '4551', 'je': 206.38, 'jqbh': '499099603447', 'jshj': 212.57, 'jxlx': '1', 'jym': '12630767295786713985', 'kprq': '20171023', 'remark': '', 'scrap': 1, 'se': 6.19, 'status': 0, 'user_id': [12143], 'xfdzdh': '天津经济技术开发区南港工业区综合服务区办公楼C座103室12单元022-59002850', 'xfmc': '滴滴出行科技有限公司', 'xfsbh': '911201163409833307', 'xfyhzh': '招商银行股份有限公司天津自由贸易试验区分行122905939910401', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>39</td>
+    <td class="text text-success">39</td>
+    <td class="text text-danger">0</td>
+    <td class="text text-warning">0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

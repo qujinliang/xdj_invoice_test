@@ -1,0 +1,1576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>发票小当家接口测试结果</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>发票小当家接口测试结果</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-12-06 07:54:03</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:22.117837</p>
+<p class='attribute'><strong>Status:</strong> Pass 10 Failure 5 Error 18</p>
+
+<p class='description'>详情请下载附件查看：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>xdj_invoice_interface_test.CheckInvoiceTest: 小当家发票查验接口测试</td>
+    <td>15</td>
+    <td>7</td>
+    <td>3</td>
+    <td>5</td>
+    <td><a href="javascript:showClassDetail('c1',15)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_chech_invoice_ptfp_succe: 普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 31, in tearDown
+    if self.result != None:
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_cycg_error: 查验成功发票信息不一致</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        fail</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: {'code': 10079, 'result': '所查发票不存在'}
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 47, in test_check_invoice_cycg_error
+    self.assertEqual(self.result['code'], 9)
+AssertionError: 10079 != 9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_dzfp_succe: 电子普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 31, in tearDown
+    if self.result != None:
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fpdm_lengt: 发票代码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: {'code': 10006, 'msg': '发票代码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_fpgs_error: 错误格式的发票</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        fail</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: {'code': 10079, 'result': '查验异常'}
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 102, in test_check_invoice_fpgs_error
+    self.assertEqual(self.result['code'], 1006)
+AssertionError: 10079 != 1006
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fphm_lengt: 发票号码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {'code': 10009, 'msg': '发票号码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fplx_error: 发票类型不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: {'code': 10003, 'msg': '发票类型：不存在的类型'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fptt_error: 发票抬头不在查询范围内</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: {'code': 10023, 'msg': '发票抬头不在查询范围内'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_fpxx_error: 无对应发票信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
+        fail</a>
+
+    <div id='div_ft1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.9: {'code': 10079, 'result': '无对应发票信息'}
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 120, in test_check_invoice_fpxx_error
+    self.assertEqual(self.result['code'], 11018)
+AssertionError: 10079 != 11018
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_jdcp_succe: 机动车销售统一发票查成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        error</a>
+
+    <div id='div_ft1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.10: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 31, in tearDown
+    if self.result != None:
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_jsfp_succe: 卷票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        error</a>
+
+    <div id='div_ft1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 31, in tearDown
+    if self.result != None:
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jym_lengt: 发票校验码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.12: {'code': 10018, 'msg': '检验码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_kprq_lengt: 发票日期长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: {'code': 10012, 'msg': '开票日期：不合法的格式'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_miss: 无对应发票信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        pass</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.14: {'code': 11018, 'msg': '无对应发票信息'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_zyfp_succe: 专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        error</a>
+
+    <div id='div_ft1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.15: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 31, in tearDown
+    if self.result != None:
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>xdj_pt_invoice_test.CheckPuTongTest: 各地区发票查验接口测试</td>
+    <td>18</td>
+    <td>3</td>
+    <td>2</td>
+    <td>13</td>
+    <td><a href="javascript:showClassDetail('c2',18)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_anhui: 安徽普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_beijing: 北京普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        error</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_fujian: 福建普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        error</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_guangdong: 广东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        error</a>
+
+    <div id='div_ft2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.4: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_guangxi: 广西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.5')" >
+        error</a>
+
+    <div id='div_ft2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.5: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.6' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_hainan: 海南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.6')" >
+        error</a>
+
+    <div id='div_ft2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.6: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_hebei: 河北普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.7')" >
+        error</a>
+
+    <div id='div_ft2.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.7: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_henan: 河南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.8')" >
+        error</a>
+
+    <div id='div_ft2.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.8: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.9' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_hunan: 湖南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.9')" >
+        error</a>
+
+    <div id='div_ft2.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.9: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_liaoning: 辽宁普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.10')" >
+        pass</a>
+
+    <div id='div_pt2.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.10: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-11-18 18:20:02', 'cycs': '1', 'detaillist': [{'dj': 95.14563106796116, 'dw': '盒', 'ggxh': None, 'hwmc': '西洋参片', 'je': 95.15, 'se': 2.85, 'sl': 1.0, 'slv': '3'}], 'fpdm': '2100171320', 'fphm': '11695353', 'fplx': '04', 'gfdzdh': None, 'gfmc': '优识云创(北京)科技有限公司', 'gfsbh': '91110108069587786B', 'gfsh': '91110108069587786B', 'gfyhzh': None, 'id': '3528', 'je': 95.15, 'jqbh': '661546796424', 'jshj': 98.0, 'jxlx': '1', 'jym': '65308236751178893273', 'kprq': '20170925', 'remark': '', 'scrap': 1, 'se': 2.85, 'status': 0, 'update_time': '2017-12-01 17:30:43', 'user_id': [12143], 'xfdzdh': '丹东市振兴区三街八委金顺嘉园2号106室 0415-2125081', 'xfmc': '丹东市振兴区金天华食品商店', 'xfsbh': '210624197004283234', 'xfyhzh': None, 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_neimeng: 内蒙普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.11')" >
+        pass</a>
+
+    <div id='div_pt2.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.11: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-05 19:19:17', 'cycs': '3', 'detaillist': [{'dj': 183.49514563106797, 'dw': None, 'ggxh': None, 'hwmc': '住宿费', 'je': 183.5, 'se': 5.5, 'sl': 1.0, 'slv': '3'}], 'fpdm': '1500164350', 'fphm': '01058176', 'fplx': '04', 'gfdzdh': None, 'gfmc': '浙江大搜车融资租赁有限公司', 'gfsbh': '9133010009205585XF', 'gfsh': '9133010009205585XF', 'gfyhzh': None, 'id': '4643', 'je': 183.5, 'jqbh': '499919715912', 'jshj': 189.0, 'jxlx': '1', 'jym': '17605840239103119257', 'kprq': '20170720', 'remark': '', 'scrap': 1, 'se': 5.5, 'status': 0, 'user_id': [12143], 'xfdzdh': '内蒙古乌兰察布市集宁区纬四路一中大门对面综合楼15048297137', 'xfmc': '乌兰察布市登喜路商务宾馆有限责任公司第一分公司', 'xfsbh': '91150900329022889T', 'xfyhzh': '乌兰察布农村商业银行股份有限公司6400301220000000023480', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.12' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_ningxia: 宁夏普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.12')" >
+        error</a>
+
+    <div id='div_ft2.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.12: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.13' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_shandong: 山东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.13')" >
+        error</a>
+
+    <div id='div_ft2.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.13: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.14' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_shanghai: 上海普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.14')" >
+        error</a>
+
+    <div id='div_ft2.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.14: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shaxi: 陕西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.15')" >
+        pass</a>
+
+    <div id='div_pt2.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.15: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'create_time': '2017-12-01 18:58:13', 'cycs': '4', 'detaillist': [{'dj': 80.58252427184466, 'dw': None, 'ggxh': None, 'hwmc': '餐饮费', 'je': 80.58, 'se': 2.42, 'sl': 1.0, 'slv': '3'}], 'fpdm': '6100171320', 'fphm': '09030275', 'fplx': '04', 'gfdzdh': '上海市青浦区工业园区郟一工业区7号3幢1层X区199室 021-67002300', 'gfmc': '上海甄汇信息科技有限公司', 'gfsbh': '91310118MA1JLFER1F', 'gfsh': '91310118MA1JLFER1F', 'gfyhzh': '招商银行上海张江支行  121922196010802', 'id': '4513', 'je': 80.58, 'jqbh': '539906938281', 'jshj': 83.0, 'jxlx': '1', 'jym': '18155987120948911427', 'kprq': '20170626', 'remark': '', 'scrap': 1, 'se': 2.42, 'status': 0, 'user_id': [12143], 'xfdzdh': '西安市雁塔区唐园假日新城1号楼1010217792704005', 'xfmc': '西安市雁塔区老屋头串串香店', 'xfsbh': '92610113MA6U3K2W0K', 'xfyhzh': '6216603600002594129中行西安东仪路支行', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.16' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_shenzhen: 深圳专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.16')" >
+        fail</a>
+
+    <div id='div_ft2.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.16: 第一次查验失败，进行第 2 次查验
+{'code': 10079, 'result': '发票抬头不在查询范围内'}
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 136, in test_check_invoice_shenzhen
+    self.test_check_invoice_shenzhen()
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 138, in test_check_invoice_shenzhen
+    self.assertEqual(self.result['code'], 0)
+AssertionError: 10079 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.17' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_tianjin: 天津普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.17')" >
+        error</a>
+
+    <div id='div_ft2.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.17: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Error&lt;/title&gt;
+&lt;style&gt;
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;An error occurred.&lt;/h1&gt;
+&lt;p&gt;Sorry, the page you are looking for is currently unavailable.&lt;br/&gt;
+Please try again later.&lt;/p&gt;
+&lt;p&gt;If you are the system administrator of this resource then you should check
+the &lt;a href="http://nginx.org/r/error_log"&gt;error log&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Faithfully yours, nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 33, in tearDown
+    if self.result is not None:
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.18' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_zhejiang: 浙江专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.18')" >
+        fail</a>
+
+    <div id='div_ft2.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.18: 第一次查验失败，进行第 2 次查验
+{'code': 10079, 'result': '发票抬头不在查询范围内'}
+Traceback (most recent call last):
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 258, in test_check_invoice_zhejiang
+    self.test_check_invoice_zhejiang()
+  File "E:\XDJProject\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 260, in test_check_invoice_zhejiang
+    self.assertEqual(self.result['code'], 0)
+AssertionError: 10079 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>33</td>
+    <td class="text text-success">10</td>
+    <td class="text text-danger">5</td>
+    <td class="text text-warning">18</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
