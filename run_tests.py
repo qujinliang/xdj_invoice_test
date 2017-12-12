@@ -9,7 +9,7 @@ from email.header import Header
 import unittest
 
 sys.path.append("./interface")
-# 指定测试用例为当前文件夹下的interface目录
+# 指定测试用例为当前文件夹下的interface目录 试一下GIT
 
 
 def send_mail(file_new):
