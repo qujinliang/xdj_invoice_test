@@ -19,7 +19,7 @@ def send_mail(file_new):
 
     smtpserver = 'smtp.exmail.qq.com'
     user = 'qujinliang@uknower.com'
-    password = 'Youshi123qu'
+    password = '4GJDShHx329jnrpg'
     sender = 'qujinliang@uknower.com'
     receiver = ['qujinliang@uknower.com','yangfangfang@uknower.com','yangguangtao@uknower.com','wangshenghui@uknower.com']
     subject = '接口自动化测试报告'
@@ -36,7 +36,7 @@ def send_mail(file_new):
     msg['Subject'] = Header(subject,'utf-8')
 
 
-    smtp = smtplib.SMTP()
+    smtp = smtplib.SMTP_SSL()
     smtp.connect(smtpserver)
     smtp.login(user, password)
     smtp.sendmail(sender, receiver, msg.as_string())

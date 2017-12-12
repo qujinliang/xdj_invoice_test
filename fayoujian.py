@@ -25,10 +25,12 @@ def send_mail(file_new):
     msg.attach(msg_html)
 
     msg['Subject'] = Header(subject,'utf-8')
+    msg['from'] = 'qujinliang@uknower.com'
 
-    smtp = smtplib.SMTP()
-    smtp.connect("smtp.exmail.qq.com")
-    smtp.login("qujinliang@uknower.com", "Youshi123qu")
+
+    smtp = smtplib.SMTP_SSL()
+    smtp.connect("smtp.exmail.qq.com",'465')
+    smtp.login("qujinliang@uknower.com", "4GJDShHx329jnrpg")
     smtp.sendmail("qujinliang@uknower.com", "qujinliang@uknower.com", msg.as_string())
 
     smtp.quit()

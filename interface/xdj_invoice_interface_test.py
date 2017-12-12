@@ -101,8 +101,8 @@ class CheckInvoiceTest(unittest.TestCase):
         # print(payload)
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 1006)
-        self.assertEqual(self.result['result'], '查验异常')
+        self.assertEqual(self.result['code'], 105)
+        self.assertEqual(self.result['result'], '查询发票不规范')
 
     def test_check_invoice_fptt_error(self):
         """发票抬头不在查询范围内"""
