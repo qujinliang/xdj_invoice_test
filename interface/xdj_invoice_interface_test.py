@@ -31,13 +31,15 @@ class CheckInvoiceTest(unittest.TestCase):
         try:
             print(self.result)
         except AttributeError as e:
-            print('报错了 %s' %e)
+            code = 500
+            self.assertEqual(code,0)
+            print('查验失败，服务器报错了,没有返回结果！！！')
 
 
 
     def test_check_invoice_cycg_error(self):
-        """查验成功发票信息不一致"""
-        payload = {'fplx': '10', 'fpdm': '1100171320', 'fphm': '03374531', 'fpje': '', 'jym': '439173',
+        """所查发票不存在"""
+        payload = {'fplx': '10', 'fpdm': '012001700112', 'fphm': '02650183', 'fpje': '', 'jym': '782238',
                    'kprq': '20170724'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
@@ -119,8 +121,8 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170514'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 11018)
-        self.assertEqual(self.result['result'], '无对应发票信息')
+        self.assertEqual(self.result['code'], 6)
+        self.assertEqual(self.result['result'], '查询成功发票不一致')
 
     # def test_check_invoice_total_num(self):
     # 	'''查询次数不足'''
@@ -131,14 +133,14 @@ class CheckInvoiceTest(unittest.TestCase):
     # 	self.assertEqual(self.result['code'],14001)
     # 	self.assertEqual(self.result['msg'],'该企业发票查验张数已超限额，请购买。')
 
-    def test_check_invoice_miss(self):
-        """无对应发票信息"""
-        payload = {'fplx': '04', 'fpdm': '012001700111', 'fphm': '02650163', 'fpje': "", 'jym': '746508',
-                   'kprq': '20170724'}
-        r = requests.post(self.url, json=payload, headers=self.headers)
-        self.result = r.json()
-        self.assertEqual(self.result['code'], 11018)
-        self.assertEqual(self.result['msg'], '无对应发票信息')
+    # def test_check_invoice_miss(self):
+    #     """无对应发票信息"""
+    #     payload = {'fplx': '04', 'fpdm': '012001700111', 'fphm': '02650163', 'fpje': "", 'jym': '746508',
+    #                'kprq': '20170724'}
+    #     r = requests.post(self.url, json=payload, headers=self.headers)
+    #     self.result = r.json()
+    #     self.assertEqual(self.result['code'], 11018)
+    #     self.assertEqual(self.result['msg'], '无对应发票信息')
 
     def test_check_invoice_dzfp_succe(self):
         """电子普通发票查验成功"""
