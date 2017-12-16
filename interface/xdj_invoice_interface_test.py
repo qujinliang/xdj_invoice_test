@@ -32,8 +32,9 @@ class CheckInvoiceTest(unittest.TestCase):
             print(self.result)
         except AttributeError as e:
             code = 500
+            print("查验失败，服务器报错了,没有返回结果")
             self.assertEqual(code,0)
-            print('查验失败，服务器报错了,没有返回结果！！！')
+
 
 
 
