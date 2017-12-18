@@ -32,7 +32,8 @@ class CheckInvoiceTest(unittest.TestCase):
             print(self.result)
         except AttributeError as e:
             code = 500
-            print("查验失败，服务器报错了,没有返回结果")
+            print("查验失败，服务器报错了,上面的是报错信息 ！！！\n",
+                  "=" * 20 + "华丽的分割线" + "=" * 20)
             self.assertEqual(code,0)
 
 
@@ -123,7 +124,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 6)
-        self.assertEqual(self.result['result'], '查询成功发票不一致')
+        self.assertEqual(self.result['result'], '查验成功发票不一致')
 
     # def test_check_invoice_total_num(self):
     # 	'''查询次数不足'''
