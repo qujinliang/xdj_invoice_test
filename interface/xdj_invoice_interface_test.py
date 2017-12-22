@@ -60,7 +60,10 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10003)
-        self.assertEqual(self.result['msg'], '发票类型：不存在的类型')
+        if self.result['msg']:
+            self.assertEqual(self.result['msg'], '发票类型：不存在的类型')
+        else:
+            self.assertEqual(self.result['result'],'发票类型：不存在的类型')
 
     def test_check_invoice_fpdm_lengt(self):
         """发票代码长度不合法"""
@@ -69,7 +72,10 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10006)
-        self.assertEqual(self.result['msg'], '发票代码：不合法的长度')
+        if self.result['msg']:
+            self.assertEqual(self.result['msg'], '发票代码：不合法的长度')
+        else:
+            self.assertEqual(self.result['result'],'发票代码：不合法的长度')
 
     def test_check_invoice_fphm_lengt(self):
         """发票号码长度不合法"""
@@ -78,7 +84,10 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10009)
-        self.assertEqual(self.result['msg'], '发票号码：不合法的长度')
+        if self.result['msg']:
+            self.assertEqual(self.result['msg'], '发票号码：不合法的长度')
+        else:
+            self.assertEqual(self.result['result'],'发票号码：不合法的长度')
 
     def test_check_invoice_jym_lengt(self):
         """发票校验码长度不合法"""
@@ -87,7 +96,10 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10018)
-        self.assertEqual(self.result['msg'], '检验码：不合法的长度')
+        if self.result['msg']:
+            self.assertEqual(self.result['msg'], '检验码：不合法的长度')
+        else:
+            self.assertEqual(self.result['result'],'检验码：不合法的长度')
 
     def test_check_invoice_kprq_lengt(self):
         """发票日期长度不合法"""
@@ -96,7 +108,10 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10012)
-        self.assertEqual(self.result['msg'], '开票日期：不合法的格式')
+        if self.result['msg']:
+            self.assertEqual(self.result['msg'], '开票日期：不合法的格式')
+        else:
+            self.assertEqual(self.result['result'],'开票日期：不合法的格式')
 
     def test_check_invoice_fpgs_error(self):
         """错误格式的发票"""

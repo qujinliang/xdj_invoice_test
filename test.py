@@ -56,6 +56,10 @@ print('义工 %s 张' %i)
 a = 123
 if type(a) is True:
 	print(1)
+x = 2
+y = 2
+
+assert (x ==2 or y > 1)
 
 # res = r.json()
 # token = res['result']['accessToken']
