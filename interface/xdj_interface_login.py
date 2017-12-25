@@ -1,8 +1,8 @@
 import requests
 
-url = "http://139.217.5.58/api/v4000/security/login?"
-user = {"source": "1", "ticket": "", "type": 1, "account": "sunliu@uknower.com", "password": "111111"}
-
+url = "http://test.fapiaoxx.com/api/v4000/security/login"
+user = {"source": "1", "ticket": "", "type": 1, "account": "test@uknower.com", "password": "222222"}
+qujinliang = {"source": "1", "ticket": "", "type": 1, "account": "qujinliang@uknower.com", "password": "111111"}
 
 class InterfaceLogin:
     """docstring for ClassName"""
@@ -16,5 +16,13 @@ class InterfaceLogin:
         token = self.result['result']['accessToken']
         return token
 
+    def login2(self):
+        r = requests.post(url,json=qujinliang)
+        self.result2 = r.json()
+        token2 = self.result2['result']['accessToken']
+        return token2
+
     if __name__ == '__main__':
         login()
+        login2()
+

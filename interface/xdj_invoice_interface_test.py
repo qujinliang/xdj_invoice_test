@@ -10,15 +10,16 @@ from interface.xdj_interface_login import InterfaceLogin
 
 class CheckInvoiceTest(unittest.TestCase):
     """小当家发票查验接口测试"""
+    i = 1
 
     def setUp(self):
         # 调用接口登录方法
         self.token = InterfaceLogin()
-        self.url = "http://139.217.5.58/api/v4000/invoice/check"
+        self.url = "http://test.fapiaoxx.com/api/v4000/invoice/check"
         self.headers = {
             'Cache-Control': 'no-cache',
             'accessToken': self.token.login(),
-            'Origin': 'http://139.217.5.58',
+            'Origin': 'http://test.fapiaoxx.com',
             'Content-Type': 'application/json',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8'
@@ -60,10 +61,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10003)
-        if self.result['msg']:
-            self.assertEqual(self.result['msg'], '发票类型：不存在的类型')
-        else:
-            self.assertEqual(self.result['result'],'发票类型：不存在的类型')
+        self.assertEqual(self.result['result'],'发票类型：不存在的类型')
 
     def test_check_invoice_fpdm_lengt(self):
         """发票代码长度不合法"""
@@ -72,10 +70,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10006)
-        if self.result['msg']:
-            self.assertEqual(self.result['msg'], '发票代码：不合法的长度')
-        else:
-            self.assertEqual(self.result['result'],'发票代码：不合法的长度')
+        self.assertEqual(self.result['result'],'发票代码：不合法的长度')
 
     def test_check_invoice_fphm_lengt(self):
         """发票号码长度不合法"""
@@ -84,10 +79,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10009)
-        if self.result['msg']:
-            self.assertEqual(self.result['msg'], '发票号码：不合法的长度')
-        else:
-            self.assertEqual(self.result['result'],'发票号码：不合法的长度')
+        self.assertEqual(self.result['result'],'发票号码：不合法的长度')
 
     def test_check_invoice_jym_lengt(self):
         """发票校验码长度不合法"""
@@ -96,10 +88,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10018)
-        if self.result['msg']:
-            self.assertEqual(self.result['msg'], '检验码：不合法的长度')
-        else:
-            self.assertEqual(self.result['result'],'检验码：不合法的长度')
+        self.assertEqual(self.result['result'],'检验码：不合法的长度')
 
     def test_check_invoice_kprq_lengt(self):
         """发票日期长度不合法"""
@@ -108,10 +97,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10012)
-        if self.result['msg']:
-            self.assertEqual(self.result['msg'], '开票日期：不合法的格式')
-        else:
-            self.assertEqual(self.result['result'],'开票日期：不合法的格式')
+        self.assertEqual(self.result['result'],'开票日期：不合法的格式')
 
     def test_check_invoice_fpgs_error(self):
         """错误格式的发票"""
@@ -130,7 +116,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 10023)
-        self.assertEqual(self.result['msg'], '发票抬头不在查询范围内')
+        self.assertEqual(self.result['result'], '发票抬头不在查询范围内')
 
     def test_check_invoice_fpxx_error(self):
         """无对应发票信息"""
@@ -139,7 +125,7 @@ class CheckInvoiceTest(unittest.TestCase):
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
         self.assertEqual(self.result['code'], 6)
-        self.assertEqual(self.result['result'], '查验成功发票不一致')
+        self.assertEqual(self.result['msg'], '查询成功发票不一致')
 
     # def test_check_invoice_total_num(self):
     # 	'''查询次数不足'''
@@ -237,6 +223,160 @@ class CheckInvoiceTest(unittest.TestCase):
             self.result = r.json()
             self.assertEqual(self.result['code'], 0)
             self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_shanghai(self):
+        """上海普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '3100162320', 'fphm': '56618159', 'fpje': '', 'jym': '690593',
+                   'kprq': '20170213'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_shanghai()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_beijing(self):
+        """北京普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '1100171320', 'fphm': '45538707', 'fpje': '', 'jym': '390267',
+                   'kprq': '20170915'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_beijing()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_tianjin(self):
+        """天津普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '1200172320', 'fphm': '09267390', 'fpje': '', 'jym': '713985',
+                   'kprq': '20171023'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_tianjin()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_hebei(self):
+        """河北普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '1300171320', 'fphm': '00271772', 'fpje': '', 'jym': '936815',
+                   'kprq': '20170927'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_hebei()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_liaoning(self):
+        """辽宁普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '2100171320', 'fphm': '11695353', 'fpje': '', 'jym': '893273',
+                   'kprq': '20170925'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_liaoning()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_anhui(self):
+        """安徽普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '3400172320', 'fphm': '19768327', 'fpje': '', 'jym': '156228',
+                   'kprq': '20171020'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_anhui()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
+        except json.decoder.JSONDecodeError as e:
+            print(e)
+            print(r.text)
+        else:
+            pass
+        finally:
+            pass
+
+    def test_check_invoice_henan(self):
+        """河南普通发票查验成功"""
+        payload = {'fplx': '04', 'fpdm': '4100171320', 'fphm': '00312101', 'fpje': '', 'jym': '956239',
+                   'kprq': '20170606'}
+        r = requests.post(self.url, json=payload, headers=self.headers)
+        try:
+            self.result = r.json()
+            if self.result['code'] != 0 and self.i == 1:
+                self.i += 1
+                print("第一次查验失败，进行第 %s 次查验" % self.i)
+                self.test_check_invoice_henan()
+            else:
+                self.assertEqual(self.result['code'], 0)
+                self.assertEqual(self.result['msg'], '查询成功')
         except json.decoder.JSONDecodeError as e:
             print(e)
             print(r.text)
