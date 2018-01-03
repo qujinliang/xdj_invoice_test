@@ -15,12 +15,13 @@ class FpxdjInvoiceTest(unittest.TestCase):
     def setUp(self):
         # 调用接口登录方法
         self.token = InterfaceLogin()
-        self.url = "http://139.217.5.58/api/v4000/invoice/check"
+        self.url = "http://test.fapiaoxx.com/api/v4000/invoice/check"
+        
 
         self.headers = {
             'Cache-Control': 'no-cache',
             'accessToken': self.token.login(),
-            'Origin': 'http://139.217.5.58',
+            'Origin': 'http://test.fapiaoxx.com',
             'Content-Type': 'application/json',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8'

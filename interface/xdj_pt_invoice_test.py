@@ -68,7 +68,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_shenzhen(self):
         """深圳专用发票查验成功"""
-        payload = {'fplx': '01', 'fpdm': '4403172130', 'fphm': '04318695', 'fpje': '633.96', 'jym': '',
+        payload = {'fplx': '01', 'fpdm': '4403172130', 'fphm': '04318695', 'jxlx':'1', 'fpje': '633.96', 'jym': '',
                    'kprq': '20170813'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -92,7 +92,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_shanxi(self):
         """山西普通发票查验成功"""
-        payload = {'fplx': '01', 'fpdm': '1400171130', 'fphm': '02062714', 'fpje': '17094.03', 'jym': '',
+        payload = {'fplx': '01', 'fpdm': '1400171130', 'fphm': '02062714', 'jxlx':'1', 'fpje': '17094.03', 'jym': '',
                    'kprq': '20171117'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -115,7 +115,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_neimeng(self):
         """内蒙普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '1500164350', 'fphm': '01058176', 'fpje': '', 'jym': '119257',
+        payload = {'fplx': '04', 'fpdm': '1500164350', 'fphm': '01058176', 'jxlx':'1', 'fpje': '', 'jym': '119257',
                    'kprq': '20170720'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -139,7 +139,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_jilin(self):
         """吉林普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '2200162350', 'fphm': '01875257', 'fpje': '', 'jym': '878078',
+        payload = {'fplx': '04', 'fpdm': '2200162350', 'fphm': '01875257', 'jxlx':'1', 'fpje': '', 'jym': '878078',
                    'kprq': '20171115'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -161,7 +161,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_zhejiang(self):
         """浙江专用发票查验成功"""
-        payload = {'fplx': '01', 'fpdm': '3300154130', 'fphm': '05331852', 'fpje': '53.68', 'jym': '',
+        payload = {'fplx': '01', 'fpdm': '3300154130', 'fphm': '05331852', 'jxlx':'1', 'fpje': '53.68', 'jym': '',
                    'kprq': '20171010'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -183,7 +183,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_fujian(self):
         """福建普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '3500163350', 'fphm': '21099644', 'fpje': '', 'jym': '920870',
+        payload = {'fplx': '04', 'fpdm': '3500163350', 'fphm': '21099644', 'jxlx':'1', 'fpje': '', 'jym': '920870',
                    'kprq': '20170621'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -205,7 +205,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_jiangxi(self):
         """江西普通发票查验成功"""
-        payload = {'fplx': '01', 'fpdm': '3600163130', 'fphm': '06998169', 'fpje': '1522.64', 'jym': '',
+        payload = {'fplx': '01', 'fpdm': '3600163130', 'fphm': '06998169', 'jxlx':'1', 'fpje': '1522.64', 'jym': '',
                    'kprq': '20171018'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -227,7 +227,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_shandong(self):
         """山东普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '3700164320', 'fphm': '33170062', 'fpje': '', 'jym': '690447',
+        payload = {'fplx': '04', 'fpdm': '3700164320', 'fphm': '33170062', 'jxlx':'1', 'fpje': '', 'jym': '690447',
                    'kprq': '20170606'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -249,7 +249,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_hubei(self):
         """湖北普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '4200164320', 'fphm': '47982351', 'fpje': '', 'jym': '464625',
+        payload = {'fplx': '04', 'fpdm': '4200164320', 'fphm': '47982351', 'jxlx':'1', 'fpje': '', 'jym': '464625',
                    'kprq': '20171026'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -271,7 +271,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_hunan(self):
         """湖南普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '4300171320', 'fphm': '04268504', 'fpje': '', 'jym': '288558',
+        payload = {'fplx': '04', 'fpdm': '4300171320', 'fphm': '04268504', 'jxlx':'1', 'fpje': '', 'jym': '288558',
                    'kprq': '20170616'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -293,7 +293,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_guangdong(self):
         """广东普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '4400163320', 'fphm': '36198951', 'fpje': '', 'jym': '596043',
+        payload = {'fplx': '04', 'fpdm': '4400163320', 'fphm': '36198951', 'jxlx':'1', 'fpje': '', 'jym': '596043',
                    'kprq': '20170421'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -315,7 +315,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_guangxi(self):
         """广西普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '4500171320', 'fphm': '15663941', 'fpje': '', 'jym': '249570',
+        payload = {'fplx': '04', 'fpdm': '4500171320', 'fphm': '15663941', 'jxlx':'1', 'fpje': '', 'jym': '249570',
                    'kprq': '20170612'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -337,7 +337,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_hainan(self):
         """海南普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '4600162320', 'fphm': '09581833', 'fpje': '', 'jym': '264788',
+        payload = {'fplx': '04', 'fpdm': '4600162320', 'fphm': '09581833', 'jxlx':'1', 'fpje': '', 'jym': '264788',
                    'kprq': '20170524'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -359,7 +359,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_shaxi(self):
         """陕西普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '6100171320', 'fphm': '09030275', 'fpje': '', 'jym': '911427',
+        payload = {'fplx': '04', 'fpdm': '6100171320', 'fphm': '09030275', 'jxlx':'1', 'fpje': '', 'jym': '911427',
                    'kprq': '20170626'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
@@ -381,7 +381,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_ningxia(self):
         """宁夏普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '6400171320', 'fphm': '02645843', 'fpje': '', 'jym': '932430',
+        payload = {'fplx': '04', 'fpdm': '6400171320', 'fphm': '02645843', 'jxlx':'1', 'fpje': '', 'jym': '932430',
                    'kprq': '20170916'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:

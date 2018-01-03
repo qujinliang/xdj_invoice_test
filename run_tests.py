@@ -19,9 +19,9 @@ def send_mail(file_new):
 
     smtpserver = 'smtp.exmail.qq.com'
     user = 'qujinliang@uknower.com'
-    password = ''
+    password = '3kNoSpJdQviSK9hy'
     sender = 'qujinliang@uknower.com'
-    receiver = ['qujinliang@uknower.com','yangfangfang@uknower.com','yangguangtao@uknower.com','wangshenghui@uknower.com']
+    receiver = ['qujinliang@uknower.com','yangguangtao@uknower.com','wangshenghui@uknower.com']
     subject = '接口自动化测试报告'
     msg = MIMEMultipart('mixed')
     msg_html1 = MIMEText(mail_body, 'html', 'utf-8')
@@ -56,8 +56,8 @@ if __name__ == '__main__':
     print('======AutoTest Start======')
 
 
-    test_dir = "E://XDJProject//xdj_invoice_test//interface"
-    test_report_dir =  "E://XDJProject//xdj_invoice_test//email"
+    test_dir = "C://MyWork//xdj_invoice_test//interface"
+    test_report_dir =  "C://MyWork//xdj_invoice_test//email"
     # discover = unittest.defaultTestLoader.discover(test_dir, pattern='xdj_invoice_interface_test.py')
     discover = unittest.defaultTestLoader.discover(test_dir, pattern="*_test.py")
     now = time.strftime("%Y-%m-%d %H_%M_%S")

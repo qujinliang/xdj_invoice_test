@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>发票小当家接口测试结果</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>发票小当家接口测试结果</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-01-02 19:09:00</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:30.796875</p>
+<p class='attribute'><strong>Status:</strong> Pass 12 Failure 23 Error 2</p>
+
+<p class='description'>详情请下载附件查看：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)' class="btn btn-xs btn-primary">Summary</a>
+<a href='javascript:showCase(1)' class="btn btn-xs btn-danger">Failed</a>
+<a href='javascript:showCase(2)' class="btn btn-xs btn-info">All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>xdj_invoice_interface_test.CheckInvoiceTest: 小当家发票查验接口测试</td>
+    <td>22</td>
+    <td>6</td>
+    <td>14</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c1',22)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_chech_invoice_ptfp_succe: 普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_anhui: 安徽普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        fail</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_beijing: 北京普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        fail</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_cycg_error: 所查发票不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        fail</a>
+
+    <div id='div_ft1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: {'code': 106, 'result': '查验异常'}
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 54, in test_check_invoice_cycg_error
+    self.assertEqual(self.result['code'], 9)
+AssertionError: 106 != 9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_dzfp_succe: 电子普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        fail</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: {'code': 106, 'result': '查验异常'}
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 155, in test_check_invoice_dzfp_succe
+    self.assertEqual(self.result['code'], 0)
+AssertionError: 106 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fpdm_lengt: 发票代码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {'code': 10006, 'msg': '发票代码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fpgs_error: 错误格式的发票</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: {'code': 105, 'result': '查询发票不规范'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fphm_lengt: 发票号码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: {'code': 10009, 'msg': '发票号码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fplx_error: 发票类型不存在</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: {'code': 10003, 'msg': '发票类型：不存在的类型'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.10' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_fptt_error: 发票抬头不在查询范围内</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
+        error</a>
+
+    <div id='div_ft1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.10: 查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 117, in test_check_invoice_fptt_error
+    self.result = r.json()
+  File "C:\Python\Python36-32\lib\site-packages\requests\models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Python\Python36-32\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python\Python36-32\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python\Python36-32\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_fptt_error: 发票抬头不在查询范围内</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        fail</a>
+
+    <div id='div_ft1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: 查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='errorCase'><div class='testcase'>test_check_invoice_fpxx_error: 无对应发票信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        error</a>
+
+    <div id='div_ft1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: {'code': 6, 'result': '查验成功发票不一致'}
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 128, in test_check_invoice_fpxx_error
+    self.assertEqual(self.result['msg'], '查询成功发票不一致')
+KeyError: 'msg'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.13' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_hebei: 河北普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.13')" >
+        fail</a>
+
+    <div id='div_ft1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.13: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.14' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_henan: 河南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.14')" >
+        fail</a>
+
+    <div id='div_ft1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.14: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.15' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_jdcp_succe: 机动车销售统一发票查成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.15')" >
+        fail</a>
+
+    <div id='div_ft1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.15: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.16' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_jsfp_succe: 卷票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.16')" >
+        fail</a>
+
+    <div id='div_ft1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.16: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jym_lengt: 发票校验码长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: {'code': 10018, 'msg': '检验码：不合法的长度'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_kprq_lengt: 发票日期长度不合法</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        pass</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: {'code': 10012, 'msg': '开票日期：不合法的格式'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.19' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_liaoning: 辽宁普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.19')" >
+        fail</a>
+
+    <div id='div_ft1.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.19: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.20' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_shanghai: 上海普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.20')" >
+        fail</a>
+
+    <div id='div_ft1.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.20: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.21' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_tianjin: 天津普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.21')" >
+        fail</a>
+
+    <div id='div_ft1.21' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.21').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.21: 第一次查验失败，进行第 2 次查验
+{'code': 106, 'result': '查验异常'}
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 288, in test_check_invoice_tianjin
+    self.test_check_invoice_tianjin()
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 290, in test_check_invoice_tianjin
+    self.assertEqual(self.result['code'], 0)
+AssertionError: 106 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.22' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_zyfp_succe: 专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.22')" >
+        fail</a>
+
+    <div id='div_ft1.22' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.22').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.22: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,上面的是报错信息 ！！！
+ ====================华丽的分割线====================
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 33, in tearDown
+    print(self.result)
+AttributeError: 'CheckInvoiceTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_invoice_interface_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>xdj_pt_invoice_test.CheckPuTongTest: 各地区发票查验接口测试</td>
+    <td>15</td>
+    <td>6</td>
+    <td>9</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',15)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_fujian: 福建普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'childlist': {'child': [{'dj': '69.02654867256638', 'dw': '件', 'ggxh': None, 'hwmc': '伊利金典纯牛奶250ml*12', 'je': '69.03', 'se': '8.97', 'sl': '1', 'slv': '13'}, {'dj': '11.965811965811966', 'dw': '袋', 'ggxh': None, 'hwmc': '散装小意思面包', 'je': '35.90', 'se': '6.10', 'sl': '3', 'slv': '17'}]}, 'create_time': '2018-01-02 13:43:37', 'cycs': '50', 'detaillist': [{'dj': 69.02654867256638, 'dw': '件', 'ggxh': None, 'hwmc': '伊利金典纯牛奶250ml*12', 'je': 69.03, 'se': 8.97, 'sl': 1.0, 'slv': '13'}, {'dj': 11.965811965811966, 'dw': '袋', 'ggxh': None, 'hwmc': '散装小意思面包', 'je': 35.9, 'se': 6.1, 'sl': 3.0, 'slv': '17'}], 'fpdm': '3500163350', 'fphm': '21099644', 'fplx': '04', 'gfdzdh': '福建省龙岩市新罗区曹溪镇董邦村合溪口0597-2778210', 'gfmc': '华润水泥(龙岩曹溪)有限公司', 'gfsbh': '913508005575738852', 'gfsh': '913508005575738852', 'gfyhzh': '中国农业银行龙岩新罗区曹溪支行13711401040003816', 'id': '871', 'je': 104.93, 'jqbh': '661512948039', 'jshj': 120.0, 'jxlx': '1', 'jym': '54050168641794920870', 'kprq': '20170621', 'remark': '', 'scrap': 1, 'se': 15.07, 'status': 0, 'user_id': 21, 'xfdzdh': '龙岩市新罗区南城莲东北路24号莲东市场一层至三层 0597-2829085', 'xfmc': '龙岩夏商百货有限公司', 'xfsbh': '9135080058533008XY', 'xfyhzh': '建行龙岩新罗支行  35001696107052513700', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_guangdong: 广东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        fail</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_guangxi: 广西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        fail</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.4' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_hainan: 海南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
+        fail</a>
+
+    <div id='div_ft2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.4: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_hubei: 湖北普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        pass</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.5: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'childlist': {'child': {'dj': None, 'dw': None, 'ggxh': None, 'hwmc': '餐饮', 'je': '587.74', 'se': '35.26', 'sl': None, 'slv': '6'}}, 'create_time': '2017-12-25 16:25:24', 'cycs': '23', 'detaillist': [{'dj': None, 'dw': None, 'ggxh': None, 'hwmc': '餐饮', 'je': 587.74, 'se': 35.26, 'sl': None, 'slv': '6'}], 'fpdm': '4200164320', 'fphm': '47982351', 'fplx': '04', 'gfdzdh': '北京市房山区长沟镇金元大街1号北京基金小镇大厦B座129010-84605801', 'gfmc': '中信建设投资发展有限责任公司', 'gfsbh': '91110111MA00GFYD8D', 'gfsh': '91110111MA00GFYD8D', 'gfyhzh': '中信银行北京京城大厦支行8110701014201210355', 'id': '844', 'je': 587.74, 'jqbh': '661603670600', 'jshj': 623.0, 'jxlx': '1', 'jym': '84992798211161464625', 'kprq': '20171026', 'remark': '', 'scrap': 1, 'se': 35.26, 'status': 0, 'user_id': 25, 'xfdzdh': '湖北省武汉市洪山区珞瑜路726号102-104号 027-87806888', 'xfmc': '武汉华美达光谷大酒店', 'xfsbh': '91420100751800834D', 'xfyhzh': '中信银行武汉东湖支行 7381110182200016140', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.6' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_hunan: 湖南普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.6')" >
+        fail</a>
+
+    <div id='div_ft2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.6: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jiangxi: 江西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.7')" >
+        pass</a>
+
+    <div id='div_pt2.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.7: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'childlist': {'child': {'dj': '1522.64', 'dw': None, 'ggxh': None, 'hwmc': '信息服务费', 'je': '1522.64', 'se': '91.36', 'sl': '1', 'slv': '6'}}, 'create_time': '2017-12-25 16:25:26', 'cycs': '8', 'detaillist': [{'dj': 1522.64, 'dw': None, 'ggxh': None, 'hwmc': '信息服务费', 'je': 1522.64, 'se': 91.36, 'sl': 1.0, 'slv': '6'}], 'fpdm': '3600163130', 'fphm': '06998169', 'fplx': '01', 'gfdzdh': '北京市海淀区太月园1号楼3层3007电话：82961015', 'gfmc': '北京玩乐付科技有限公司', 'gfsbh': '110108318356066', 'gfsh': '110108318356066', 'gfyhzh': '中国工商银行海淀支行0200049609201055218', 'id': '846', 'je': 1522.64, 'jqbh': '661719644059', 'jshj': 1614.0, 'jxlx': '1', 'jym': '54725750602609330676', 'kprq': '20171018', 'remark': '', 'scrap': 1, 'se': 91.36, 'status': 0, 'user_id': 25, 'xfdzdh': '九江市濂溪区木樨路1号极地盛世名都E栋不分单元1510号 13667023618', 'xfmc': '九江康盛网络科技有限公司', 'xfsbh': '91360402MA365A109P', 'xfyhzh': '建设银行九江濂溪支行36050164016300000273', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_jilin: 吉林普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.8')" >
+        pass</a>
+
+    <div id='div_pt2.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.8: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'childlist': {'child': {'dj': None, 'dw': None, 'ggxh': None, 'hwmc': '住宿费', 'je': '312.26', 'se': '18.74', 'sl': None, 'slv': '6'}}, 'create_time': '2017-12-25 16:25:28', 'cycs': '8', 'detaillist': [{'dj': None, 'dw': None, 'ggxh': None, 'hwmc': '住宿费', 'je': 312.26, 'se': 18.74, 'sl': None, 'slv': '6'}], 'fpdm': '2200162350', 'fphm': '01875257', 'fplx': '04', 'gfdzdh': None, 'gfmc': '北京利曼科技有限公司', 'gfsbh': '911101167423089443', 'gfsh': '911101167423089443', 'gfyhzh': None, 'id': '847', 'je': 312.26, 'jqbh': '661600816386', 'jshj': 331.0, 'jxlx': '1', 'jym': '58248781293402878078', 'kprq': '20171115', 'remark': '', 'scrap': 1, 'se': 18.74, 'status': 0, 'user_id': 25, 'xfdzdh': '长春市硅谷大街3355号超达创业园3、4幢226号房 0431-88609988', 'xfmc': '长春市昊禹娱乐服务有限公司硅谷大街店', 'xfsbh': '91220101MA0Y3R1T1W', 'xfyhzh': '中国农业银行股份有限公司长春高新支行07151101040005244', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.9' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_neimeng: 内蒙普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.9')" >
+        fail</a>
+
+    <div id='div_ft2.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.9: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.10' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_ningxia: 宁夏普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.10')" >
+        fail</a>
+
+    <div id='div_ft2.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.10: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_shandong: 山东普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.11')" >
+        fail</a>
+
+    <div id='div_ft2.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.11: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_shanxi: 山西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.12')" >
+        pass</a>
+
+    <div id='div_pt2.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.12: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'childlist': {'child': [{'dj': '16239.31623931624', 'dw': '根', 'ggxh': None, 'hwmc': '斗杆油缸', 'je': '16239.32', 'se': '2760.68', 'sl': '1', 'slv': '17'}, {'dj': '384.61538461538464', 'dw': '个', 'ggxh': None, 'hwmc': '吸油滤芯', 'je': '384.62', 'se': '65.38', 'sl': '1', 'slv': '17'}, {'dj': '239.31623931623932', 'dw': '个', 'ggxh': None, 'hwmc': '回油滤芯', 'je': '239.32', 'se': '40.68', 'sl': '1', 'slv': '17'}, {'dj': '102.56410256410257', 'dw': '根', 'ggxh': None, 'hwmc': '水管', 'je': '102.56', 'se': '17.44', 'sl': '1', 'slv': '17'}, {'dj': '42.73504273504273', 'dw': '条', 'ggxh': None, 'hwmc': '风扇带', 'je': '128.21', 'se': '21.79', 'sl': '3', 'slv': '17'}]}, 'create_time': '2017-12-25 16:25:32', 'cycs': '14', 'detaillist': [{'dj': 16239.31623931624, 'dw': '根', 'ggxh': None, 'hwmc': '斗杆油缸', 'je': 16239.32, 'se': 2760.68, 'sl': 1.0, 'slv': '17'}, {'dj': 384.61538461538464, 'dw': '个', 'ggxh': None, 'hwmc': '吸油滤芯', 'je': 384.62, 'se': 65.38, 'sl': 1.0, 'slv': '17'}, {'dj': 239.31623931623932, 'dw': '个', 'ggxh': None, 'hwmc': '回油滤芯', 'je': 239.32, 'se': 40.68, 'sl': 1.0, 'slv': '17'}, {'dj': 102.56410256410257, 'dw': '根', 'ggxh': None, 'hwmc': '水管', 'je': 102.56, 'se': 17.44, 'sl': 1.0, 'slv': '17'}, {'dj': 42.73504273504273, 'dw': '条', 'ggxh': None, 'hwmc': '风扇带', 'je': 128.21, 'se': 21.79, 'sl': 3.0, 'slv': '17'}], 'fpdm': '1400171130', 'fphm': '02062714', 'fplx': '01', 'gfdzdh': '山西省晋城市城区司徒村（军民汽运院内106室） 0356-2100065', 'gfmc': '晋城市中博建筑工程有限公司', 'gfsbh': '911405000968925833', 'gfsh': '911405000968925833', 'gfyhzh': '晋城银行矿区支行  111801201030503195', 'id': '850', 'je': 17094.03, 'jqbh': '661515720216', 'jshj': 20000.0, 'jxlx': '1', 'jym': '82041065511070074718', 'kprq': '20171117', 'remark': '', 'scrap': 1, 'se': 2905.97, 'status': 0, 'user_id': 25, 'xfdzdh': '晋城开发区兰花路南端 0356-2192932', 'xfmc': '晋城市长宏工程机械有限公司', 'xfsbh': '9114050078329784X0', 'xfyhzh': '山西泽州农村商业银行股份有限公司  505103010300000056444', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.13' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_shaxi: 陕西普通发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.13')" >
+        fail</a>
+
+    <div id='div_ft2.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.13: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft2.14' class='none'>
+    <td class='failCase'><div class='testcase'>test_check_invoice_shenzhen: 深圳专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.14')" >
+        fail</a>
+
+    <div id='div_ft2.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.14: Expecting value: line 1 column 1 (char 0)
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+
+查验失败，服务器报错了,没有返回结果！！！
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 34, in tearDown
+    print(self.result)
+AttributeError: 'CheckPuTongTest' object has no attribute 'result'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\MyWork\xdj_invoice_test\interface\xdj_pt_invoice_test.py", line 38, in tearDown
+    self.assertEqual(code,0)
+AssertionError: 500 != 0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_check_invoice_zhejiang: 浙江专用发票查验成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.15')" >
+        pass</a>
+
+    <div id='div_pt2.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.15: {'code': 0, 'msg': '查询成功', 'result': {'business': 0, 'bz': None, 'childlist': {'child': {'dj': '26.837606837606838', 'dw': '个', 'ggxh': None, 'hwmc': '木制玩具', 'je': '53.68', 'se': '9.12', 'sl': '2', 'slv': '17'}}, 'create_time': '2017-12-25 16:26:05', 'cycs': '34', 'detaillist': [{'dj': 26.837606837606838, 'dw': '个', 'ggxh': None, 'hwmc': '木制玩具', 'je': 53.68, 'se': 9.12, 'sl': 2.0, 'slv': '17'}], 'fpdm': '3300154130', 'fphm': '05331852', 'fplx': '01', 'gfdzdh': '安徽省芜湖市弋江区久盛路8号1#厂房 0553-8783333', 'gfmc': '安徽三只松鼠云商营销有限责任公司', 'gfsbh': '91340200MA2N09R16D', 'gfsh': '91340200MA2N09R16D', 'gfyhzh': '中国建设银行股份有限公司芜湖市分行黄山路支行 34050167590800000093', 'id': '851', 'je': 53.68, 'jqbh': '661534587887', 'jshj': 62.8, 'jxlx': '1', 'jym': '82439076803176593992', 'kprq': '20171010', 'remark': '', 'scrap': 1, 'se': 9.12, 'status': 0, 'user_id': 25, 'xfdzdh': '云和县凤凰山街道新华街288号  0578-5118114', 'xfmc': '浙江木丸子玩具有限公司', 'xfsbh': '91331125060567260Q', 'xfyhzh': '云和县农行 815101040024805', 'zfbz': 'N'}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>37</td>
+    <td class="text text-success">12</td>
+    <td class="text text-danger">23</td>
+    <td class="text text-warning">2</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
