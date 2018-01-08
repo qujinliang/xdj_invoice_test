@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/interface/xdj_interface_login.py" line="20" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0762b552-02fe-4c45-9156-f42c954dabb8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/xdj_interface_login.py" afterPath="$PROJECT_DIR$/interface/xdj_interface_login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/xdj_invoice_interface_test.py" afterPath="$PROJECT_DIR$/interface/xdj_invoice_interface_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/xdj_pt_invoice_test.py" afterPath="$PROJECT_DIR$/interface/xdj_pt_invoice_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +21,8 @@
       <file leaf-file-name="run_tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+            <state relative-caret-position="400">
+              <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -30,7 +33,7 @@
       <file leaf-file-name="db_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
+            <state relative-caret-position="530">
               <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -42,8 +45,8 @@
       <file leaf-file-name="xdj_pt_invoice_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interface/xdj_pt_invoice_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4925">
-              <caret line="247" column="16" lean-forward="false" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="16" />
+            <state relative-caret-position="-14">
+              <caret line="335" column="16" lean-forward="true" selection-start-line="335" selection-start-column="16" selection-end-line="335" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -52,21 +55,9 @@
       <file leaf-file-name="xdj_interface_login.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interface/xdj_interface_login.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="430">
+              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding>
-                <element signature="e#14#29#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -74,8 +65,8 @@
       <file leaf-file-name="xdj_invoice_interface_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interface/xdj_invoice_interface_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3175">
-              <caret line="127" column="48" lean-forward="false" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
+            <state relative-caret-position="-6192">
+              <caret line="117" column="52" lean-forward="false" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
               <folding>
                 <element signature="e#15#30#0" expanded="true" />
               </folding>
@@ -104,16 +95,16 @@
         <option value="$PROJECT_DIR$/db_data.py" />
         <option value="$PROJECT_DIR$/fayoujian.py" />
         <option value="$PROJECT_DIR$/run_tests.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/interface/xdj_interface_login.py" />
         <option value="$PROJECT_DIR$/interface/xdj_pt_invoice_test.py" />
         <option value="$PROJECT_DIR$/interface/xdj_invoice_interface_test.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/interface/xdj_interface_login.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1" />
-    <option name="y" value="29" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="12" />
     <option name="width" value="1381" />
     <option name="height" value="687" />
   </component>
@@ -132,6 +123,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,8 +141,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,7 +159,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest">
+  <component name="RunManager" selected="Python.test">
     <configuration name="Unittests for xdj_invoice_interface_test.CheckInvoiceTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,7 +219,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="run_tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -240,25 +231,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="xdj_invoice_test" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_tests.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.run_tests" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest.test_check_invoice_jsfp_succe" />
-      <item index="2" class="java.lang.String" itemvalue="Python.db_data" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_pt_invoice_test.CheckPuTongTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest.test_check_invoice_jsfp_succe" />
+      <item index="1" class="java.lang.String" itemvalue="Python.db_data" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_pt_invoice_test.CheckPuTongTest" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_pt_invoice_test.CheckPuTongTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest.test_check_invoice_jsfp_succe" />
-        <item index="3" class="java.lang.String" itemvalue="Python.db_data" />
-        <item index="4" class="java.lang.String" itemvalue="Python.run_tests" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_pt_invoice_test.CheckPuTongTest" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for xdj_invoice_interface_test.CheckInvoiceTest.test_check_invoice_jsfp_succe" />
+        <item index="4" class="java.lang.String" itemvalue="Python.db_data" />
       </list>
     </recent_temporary>
   </component>
@@ -311,13 +302,13 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2873016" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2873016" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -338,7 +329,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -708,7 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
+        <state relative-caret-position="530">
           <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -716,30 +709,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#29#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run_tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        <state relative-caret-position="400">
+          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interface/xdj_invoice_interface_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3175">
-          <caret line="127" column="48" lean-forward="false" selection-start-line="127" selection-start-column="48" selection-end-line="127" selection-end-column="48" />
+        <state relative-caret-position="-6192">
+          <caret line="117" column="52" lean-forward="false" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
           <folding>
             <element signature="e#15#30#0" expanded="true" />
           </folding>
@@ -748,16 +741,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interface/xdj_pt_invoice_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4925">
-          <caret line="247" column="16" lean-forward="false" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="16" />
+        <state relative-caret-position="-14">
+          <caret line="335" column="16" lean-forward="true" selection-start-line="335" selection-start-column="16" selection-end-line="335" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/interface/xdj_interface_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="430">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding />
         </state>
       </provider>

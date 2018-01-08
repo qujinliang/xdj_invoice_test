@@ -7,15 +7,22 @@ import time
 import json
 import csv
 
-# with open('fp_data01.csv') as csvfile:
-# 	reader = csv.DictReader(csvfile)
-# 	newo_dict = {}
-# 	for row in reader:
-# 		list1 = [row['fplx'],row['fpdm'],row['fphm'],row['kprq'],row['je']]
-# 		list2 = ['fplx','fpdm','fphm','kprq','je']
-# 		dicts = dict(zip(list2,list1))
-# 		print(dicts)
-# 		return (dicts)
+with open('fp_data01.csv') as csvfile:
+	reader = csv.DictReader(csvfile)
+	newo_dict = {}
+	lists = []
+	fphm = '18608806'
+
+	for row in reader:
+		list1 = [row['fpdm'],row['fphm'],row['kprq'],row['je']]
+		list2 = ['fpdm','fphm','kprq','je']
+		if fphm in list1:
+			dicts = dict(zip(list2,list1))
+			print(dicts)
+
+
+
+
 	
 		
 
@@ -59,7 +66,7 @@ if type(a) is True:
 x = 2
 y = 2
 
-assert (x ==2 or y > 1)
+
 
 # res = r.json()
 # token = res['result']['accessToken']

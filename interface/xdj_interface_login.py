@@ -11,16 +11,24 @@ class InterfaceLogin:
         pass
 
     def login(self):
-        r = requests.post(url, json=user)
-        self.result = r.json()
-        token = self.result['result']['accessToken']
-        return token
+        try:
+            r = requests.post(url, json=user)
+            self.result = r.json()
+            token = self.result['result']['accessToken']
+            return token
+        except KeyError as e:
+            print('登录失败！')
+            print('错误信息：%s' % e)
 
     def login2(self):
-        r = requests.post(url,json=qujinliang)
-        self.result2 = r.json()
-        token2 = self.result2['result']['accessToken']
-        return token2
+        try:
+            r = requests.post(url, json=user)
+            self.result2 = r.json()
+            token2 = self.result2['result']['accessToken']
+            return token2
+        except KeyError as e:
+            print('登录失败！')
+            print('错误信息: %s' % e)
 
     if __name__ == '__main__':
         login()
