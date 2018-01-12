@@ -51,8 +51,12 @@ class CheckInvoiceTest(unittest.TestCase):
             self.assertEqual(self.result['code'], 2)
         else:
             # print(self.result)
-            self.assertEqual(self.result['code'], 9)
-            self.assertEqual(self.result['result'], '所查发票不存在')
+            try:
+                self.assertEqual(self.result['code'], 9)
+                self.assertEqual(self.result['result'], '所查发票不存在')
+            except KeyError as e:
+                self.assertEqual(self.result['code'], 9)
+                self.assertEqual(self.result['msg'], '所查发票不存在')
 
     def test_check_invoice_fplx_error(self):
         """发票类型不存在"""
@@ -60,8 +64,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170724'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 10003)
-        self.assertEqual(self.result['msg'],'发票类型：不存在的类型')
+        try:
+            self.assertEqual(self.result['code'], 10003)
+            self.assertEqual(self.result['msg'],'发票类型：不存在的类型')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 10003)
+            self.assertEqual(self.result['result'], '发票类型：不存在的类型')
 
     def test_check_invoice_fpdm_lengt(self):
         """发票代码长度不合法"""
@@ -69,8 +77,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170724'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 10006)
-        self.assertEqual(self.result['msg'],'发票代码：不合法的长度')
+        try:
+            self.assertEqual(self.result['code'], 10006)
+            self.assertEqual(self.result['msg'],'发票代码：不合法的长度')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 10006)
+            self.assertEqual(self.result['result'], '发票代码：不合法的长度')
 
     def test_check_invoice_fphm_lengt(self):
         """发票号码长度不合法"""
@@ -78,8 +90,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170724'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 10009)
-        self.assertEqual(self.result['msg'],'发票号码：不合法的长度')
+        try:
+            self.assertEqual(self.result['code'], 10009)
+            self.assertEqual(self.result['msg'],'发票号码：不合法的长度')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 10009)
+            self.assertEqual(self.result['result'], '发票号码：不合法的长度')
 
     def test_check_invoice_jym_lengt(self):
         """发票校验码长度不合法"""
@@ -87,8 +103,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170724'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 10018)
-        self.assertEqual(self.result['msg'],'检验码：不合法的长度')
+        try:
+            self.assertEqual(self.result['code'], 10018)
+            self.assertEqual(self.result['msg'],'检验码：不合法的长度')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 10018)
+            self.assertEqual(self.result['result'], '检验码：不合法的长度')
 
     def test_check_invoice_kprq_lengt(self):
         """发票日期长度不合法"""
@@ -96,8 +116,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170724343'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 10012)
-        self.assertEqual(self.result['msg'],'开票日期：不合法的格式')
+        try:
+            self.assertEqual(self.result['code'], 10012)
+            self.assertEqual(self.result['msg'],'开票日期：不合法的格式')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 10012)
+            self.assertEqual(self.result['result'], '开票日期：不合法的格式')
 
     def test_check_invoice_fpgs_error(self):
         """错误格式的发票"""
@@ -106,8 +130,12 @@ class CheckInvoiceTest(unittest.TestCase):
         # print(payload)
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 105)
-        self.assertEqual(self.result['result'], '查询发票不规范')
+        try:
+            self.assertEqual(self.result['code'], 105)
+            self.assertEqual(self.result['result'], '查询发票不规范')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 105)
+            self.assertEqual(self.result['msg'], '查询发票不规范')
 
     def test_check_invoice_fptt_error(self):
         """发票抬头不在查询范围内"""
@@ -115,8 +143,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170418'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 10023)
-        self.assertEqual(self.result['result'], '发票抬头不在查询范围内')
+        try:
+            self.assertEqual(self.result['code'], 10023)
+            self.assertEqual(self.result['result'], '发票抬头不在查询范围内')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 10023)
+            self.assertEqual(self.result['msg'], '发票抬头不在查询范围内')
 
     def test_check_invoice_fpxx_error(self):
         """无对应发票信息"""
@@ -124,8 +156,12 @@ class CheckInvoiceTest(unittest.TestCase):
                    'kprq': '20170514'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         self.result = r.json()
-        self.assertEqual(self.result['code'], 6)
-        self.assertEqual(self.result['result'], '查验成功发票不一致')
+        try:
+            self.assertEqual(self.result['code'], 6)
+            self.assertEqual(self.result['result'], '查验成功发票不一致')
+        except KeyError as e:
+            self.assertEqual(self.result['code'], 6)
+            self.assertEqual(self.result['msg'], '查验成功发票不一致')
 
     # def test_check_invoice_total_num(self):
     # 	'''查询次数不足'''

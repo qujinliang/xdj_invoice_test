@@ -337,8 +337,7 @@ class CheckPuTongTest(unittest.TestCase):
 
     def test_check_invoice_hainan(self):
         """海南普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '4600162320', 'fphm': '09581833', 'jxlx':'1', 'fpje': '', 'jym': '264788',
-                   'kprq': '20170524'}
+        payload = {'fplx': '04', 'fpdm': '4600162320', 'fphm': '09581833', 'jxlx':'1', 'fpje': '', 'jym': '264788','kprq': '20170524'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
             self.result = r.json()
