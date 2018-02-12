@@ -4,12 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/interface/xdj_interface_login.py" line="20" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0762b552-02fe-4c45-9156-f42c954dabb8" name="Default" comment="&quot;更新异常发票返回KEY为result时的处理&quot;">
+    <list default="true" id="0762b552-02fe-4c45-9156-f42c954dabb8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fayoujian.py" afterPath="$PROJECT_DIR$/fayoujian.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/xdj_interface_login.py" afterPath="$PROJECT_DIR$/interface/xdj_interface_login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interface/xdj_invoice_interface_test.py" afterPath="$PROJECT_DIR$/interface/xdj_invoice_interface_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.py" afterPath="$PROJECT_DIR$/run_tests.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run_tests.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run_tests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="25">
               <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
               <folding />
             </state>
@@ -42,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xdj_invoice_interface_test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xdj_invoice_interface_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interface/xdj_invoice_interface_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
+            <state relative-caret-position="3700">
               <caret line="148" column="46" lean-forward="true" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
               <folding>
                 <element signature="e#15#30#0" expanded="true" />
@@ -261,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515722021270</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;去掉普通发票查验，注释卷票查验，修改发票抬头不在查验范围内异常捕获&quot;">
+      <created>1518402311443</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1518402311443</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -326,7 +329,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;添加登录接口失败报错信息&quot;" />
     <MESSAGE value="&quot;更新异常发票返回KEY为result时的处理&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;更新异常发票返回KEY为result时的处理&quot;" />
+    <MESSAGE value="&quot;去掉普通发票查验，注释卷票查验，修改发票抬头不在查验范围内异常捕获&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;去掉普通发票查验，注释卷票查验，修改发票抬头不在查验范围内异常捕获&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,21 +720,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interface/xdj_invoice_interface_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
+        <state relative-caret-position="3700">
           <caret line="148" column="46" lean-forward="true" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
           <folding>
             <element signature="e#15#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
