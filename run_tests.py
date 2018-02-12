@@ -19,7 +19,7 @@ def send_mail(file_new):
 
     smtpserver = 'smtp.exmail.qq.com'
     user = 'qujinliang@uknower.com'
-    password = 'dT27YnZfn3WUydtd'
+    password = ''
 
     sender = 'qujinliang@uknower.com'
     receiver = ['qujinliang@uknower.com','yangguangtao@uknower.com','wangshenghui@uknower.com']
