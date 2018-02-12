@@ -22,7 +22,7 @@ class InterfaceLogin:
 
     def login2(self):
         try:
-            r = requests.post(url, json=user)
+            r = requests.post(url, json=qujinliang)
             self.result2 = r.json()
             token2 = self.result2['result']['accessToken']
             return token2
