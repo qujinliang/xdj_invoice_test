@@ -29,8 +29,8 @@ def send_mail(file_new):
 
 
     smtp = smtplib.SMTP_SSL()
-    smtp.connect("smtp.exmail.qq.com",'465')
-    smtp.login("qujinliang@uknower.com", "4GJDShHx329jnrpg")
+    smtp.connect("smtp.exmail.qq.com")
+    smtp.login("qujinliang@uknower.com", "JEDnX7EXn6da6LZx")
     smtp.sendmail("qujinliang@uknower.com", "qujinliang@uknower.com", msg.as_string())
 
     smtp.quit()
