@@ -251,8 +251,8 @@ class CheckInvoiceTest(unittest.TestCase):
 
     def test_check_invoice_shanghai(self):
         """上海普通发票查验成功"""
-        payload = {'fplx': '04', 'fpdm': '3100162320', 'fphm': '56618159','jxlx':'1', 'fpje': '', 'jym': '690593',
-                   'kprq': '20170213'}
+        payload = {'fplx': '04', 'fpdm': '3100171320', 'fphm': '50621017','jxlx':'1', 'fpje': '', 'jym': '376339',
+                   'kprq': '20171104'}
         r = requests.post(self.url, json=payload, headers=self.headers)
         try:
             self.result = r.json()

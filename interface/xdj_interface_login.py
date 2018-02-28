@@ -1,7 +1,7 @@
 import requests
 
 url = "http://test.fapiaoxx.com/api/v4000/security/login"
-user = {"source": "1", "ticket": "", "type": 1, "account": "test@uknower.com", "password": "222222"}
+user = {"source": "1", "ticket": "", "type": 1, "account": "test@uknower.com", "password": "Ysyc1234!@#$"}
 qujinliang = {"source": "1", "ticket": "", "type": 1, "account": "qujinliang@uknower.com", "password": "111111"}
 
 class InterfaceLogin:
