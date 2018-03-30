@@ -9,7 +9,7 @@ from interface.xdj_interface_login import InterfaceLogin
 
 
 class CheckInvoiceTest(unittest.TestCase):
-    """小当家发票查验接口测试"""
+    """发票查验接口监控报告"""
     i = 1
 
     def setUp(self):

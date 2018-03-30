@@ -22,7 +22,7 @@ def send_mail(file_new):
     password = ''
 
     sender = 'qujinliang@uknower.com'
-    receiver = ['qujinliang@uknower.com','yangguangtao@uknower.com','wangshenghui@uknower.com','sunyadong@uknower.com','xujianyou@uknower.com','liupingjun@uknower.com']
+    receiver = ['qujinliang@uknower.com']
     subject = '接口自动化测试报告'
     msg = MIMEMultipart('mixed')
     msg_html1 = MIMEText(mail_body, 'html', 'utf-8')
